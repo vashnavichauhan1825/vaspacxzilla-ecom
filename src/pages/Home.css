@@ -468,10 +468,11 @@ margin-right:5px;
 }
 
 .letter-container{
-    margin: 6rem 16rem;
+    margin: auto;
+    max-width: 900px;
     background-color: var(--secbg-color);
     text-align: center;
-    padding: 20px 11rem;
+    padding:1.3rem;
     border-radius: 11px;
 }
 
@@ -532,5 +533,14 @@ footer .vaspacx{
         
        
         text-align: center;
+    }
+    .letter-container{
+        margin:2rem;
+        padding:1rem;
+        font-size:0.8rem;
+    }
+
+    #hidden__cont{
+        display:none;
     }
   }
