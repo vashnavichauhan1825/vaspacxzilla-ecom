@@ -10,7 +10,7 @@ const MainNav = () => {
         <span className="clr-primary">zilla</span>
       </span>
       <div className="search-cont">
-        <form>
+        <form id="hidden__cont">
           <select className="bold-grey-text">
             <option>All</option>
             <option>Home Decor</option>
@@ -21,14 +21,14 @@ const MainNav = () => {
         <input id="input" className="bold-grey-text" placeholder="Search..." />
       </div>
       <div className="search-cont">
-        <small className="bold-grey-text pointer">
+        <small className="bold-grey-text pointer" id="hidden__cont">
           Help <i className="fa fa-angle-down" aria-hidden="true"></i>
         </small>
         <div className="cart-nav-cont">
           <a href="#">
             <i className="fa fa-shopping-basket pointer" aria-hidden="true"></i>
           </a>
-          <small>My Account</small>
+          <small id="hidden__cont">My Account</small>
         </div>
       </div>
     </div>

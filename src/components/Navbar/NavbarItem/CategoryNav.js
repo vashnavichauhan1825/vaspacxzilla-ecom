@@ -5,7 +5,7 @@ const CategoryNav = () => {
     <div className="category-nav">
     
                 <div className="left-menu">
-                   <button><i className="fa fa-bars" aria-hidden="true"></i> Categories</button>
+                   <button><i className="fa fa-bars" aria-hidden="true"></i><span id='hidden__cont'>Categories</span></button>
                   <div className="dropdown-menu">
                     <a href="/">Books<i className="fa fa-angle-right" aria-hidden="true"></i></a>
                    <a href="/">Astronomy<i className="fa fa-angle-right" aria-hidden="true"></i></a>

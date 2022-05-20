@@ -152,9 +152,9 @@ margin-right:5px;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid var(--lightGrey);
-    /* height: 57px; */
-    /* padding: 27px 0px; */
-    height: 100px;
+    flex-wrap:wrap-reverse;
+    padding: 0.5rem;
+    gap: 0.5rem;
 }
 
 .search-nav .search-cont{
@@ -542,5 +542,12 @@ footer .vaspacx{
 
     #hidden__cont{
         display:none;
+    }
+    .search-nav #input{
+        width:auto;
+    }
+    .category-nav .left-menu button{
+        width:auto;
+        padding:0.5rem;
     }
   }

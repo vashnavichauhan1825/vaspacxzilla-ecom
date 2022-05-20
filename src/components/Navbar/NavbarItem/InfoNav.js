@@ -2,7 +2,7 @@ import React from "react";
 
 const InfoNav = () => {
   return (
-    <div className="contact-nav">
+    <div className="contact-nav" id="hidden__cont">
       <div>
         <small className="bold-grey-text pointer">
           Call us <i className="fa fa-angle-down" aria-hidden="true"></i>
