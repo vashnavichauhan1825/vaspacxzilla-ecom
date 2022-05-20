@@ -4,6 +4,7 @@ import ImgLayout from '../components/Layout/ImgLayout'
 import PopularCategory from '../components/Layout/PopularCategory'
 import Service from '../components/Layout/Service'
 import Navbar from '../components/Navbar/Navbar'
+import Reviews from '../components/review/Reviews'
 import Slider from '../components/Slider/Slider'
 import './Home.css'
 
@@ -16,6 +17,7 @@ const Home = () => {
         <FeatureProduct/>
         <PopularCategory/>
         <ImgLayout/>
+        <Reviews/>
     </Fragment>
   )
 }

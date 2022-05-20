@@ -330,7 +330,7 @@ margin-right:5px;
 
 
 .popular-item{
-    height: 559px;
+    height:auto;
     display: grid;
     gap: 20px;
     padding: 20px;
@@ -459,6 +459,7 @@ margin-right:5px;
     flex-direction: column;
     border: none;
     border-radius: 5px;
+    max-width:350px;
     padding: 2rem;
 }
 
