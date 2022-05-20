@@ -412,7 +412,7 @@ margin-right:5px;
        grid-template-columns: repeat(3,328px);
 }
 
-.popular-category .pc-first{
+.pc-first{
     display: grid;
     grid-template-columns: 1fr 2fr;
     background-color: var(--secbg-color);
@@ -428,7 +428,7 @@ margin-right:5px;
     align-items: center;
 }
 
-.popular-category ul{
+.pc-first ul{
     list-style: none;
     display: flex;
     margin: 0;
@@ -439,11 +439,11 @@ margin-right:5px;
     letter-spacing: 1px;
 }
 
-.popular-category li{
+.pc-first li{
     list-style:none;
 }
 
-.popular-category img{
+.pc-first img{
     width: 128px;
     height: 165px;
 }
@@ -520,3 +520,16 @@ footer .vaspacx{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media only screen and (max-width: 600px) {
+    .popular-item {
+       display:flex;
+       flex-direction:column;
+       margin:1rem;
+    }
+    .heading-product{
+        
+       
+        text-align: center;
+    }
+  }
