@@ -7,3 +7,4 @@ export {Service} from './Layout/Service';
 export{ Navbar} from './Navbar/Navbar';
 export {Reviews} from './review/Reviews'
 export {Slider} from './Slider/Slider';
+export {ProductSection} from './products/ProductSection'
