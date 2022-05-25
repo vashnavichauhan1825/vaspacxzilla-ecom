@@ -1,17 +1,17 @@
 import React,{ Fragment } from "react";
 import { ImgLayoutItems } from '../../data'
 
-const ImgLayout = () => {
+export const ImgLayout = () => {
   return (
     <Fragment>
-      <h2 class="heading-product head-margin">Popular Items</h2>
-      <div class="popular-item">
+      <h2 className="heading-product head-margin">Popular Items</h2>
+      <div className="popular-item">
         {ImgLayoutItems.map((item) => (
-          <div class={item.class}>
+          <div className={item.class}>
             <h1>{item.name}</h1>
-            <p class="bold-grey-text">{item.price}</p>
-            <button class="primay-btn outl-btn">
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <p className="bold-grey-text">{item.price}</p>
+            <button className="primay-btn outl-btn">
+              <i className="fa fa-angle-right" aria-hidden="true"></i>
             </button>
           </div>
         ))}
@@ -20,4 +20,4 @@ const ImgLayout = () => {
   );
 };
 
-export default ImgLayout;
+

@@ -15,7 +15,7 @@ line-height: 2;
 `
 
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <FooterCont>
        <Vaspacx/>
@@ -26,4 +26,3 @@ const Footer = () => {
   )
 }
 
-export default Footer;

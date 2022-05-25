@@ -4,7 +4,7 @@ import FeatureTwo from './FeatureItem/FeatureTwo'
 import FourFeatOne from './FeatureItem/FourFeatOne'
 import SpecialCountdown from './FeatureItem/SpecialCountdown'
 
-const FeatureProduct = () => {
+export const FeatureProduct = () => {
   return (
    <Fragment>
    <h2 className="heading-product">Featured Products</h2>
@@ -17,4 +17,3 @@ const FeatureProduct = () => {
   )
 }
 
-export default FeatureProduct

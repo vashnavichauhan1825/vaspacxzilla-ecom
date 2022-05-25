@@ -6,7 +6,7 @@ import React,{Fragment} from 'react'
 import Card from '../../UI/Card'
 
 
-const Reviews = () => {
+export const Reviews = () => {
   return (
      
     <Fragment>
@@ -34,4 +34,3 @@ const Reviews = () => {
   )
 }
 
-export default Reviews;

@@ -79,7 +79,7 @@ const Button = styled.button`
   border:2px solid #3a7ce3;
 `;
 
-const Slider = () => {
+export const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -115,4 +115,3 @@ const Slider = () => {
   );
 };
 
-export default Slider;
