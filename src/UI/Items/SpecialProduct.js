@@ -1,10 +1,9 @@
 import React from 'react'
-import './Card.css'
+import '../card/Card.css'
 
-const SpecialProduct = (props) => {
+export const SpecialProduct = (props) => {
   return (
     <div className='three-grid__cont'>{props.children}</div>
   )
 }
 
-export default SpecialProduct

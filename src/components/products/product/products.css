@@ -1,0 +1,80 @@
+
+section{
+    display:grid;
+}
+
+
+.catalog-section{
+    position: relative;
+    height:auto;
+}
+
+.catalog-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+}
+
+.catalog-nav i{
+    cursor: pointer;
+}
+
+main{
+    padding:1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
+    height:auto;
+    gap: 30px;
+}
+.product-display .card-bookmark{
+    left: 0%;
+    margin-left: -6px;
+}
+
+.product-display .discount-cont{
+    display:inline-block;
+    margin:5px;
+}
+
+.product-display .card-bookmark i{
+ color: rgb(204, 204, 42);
+}
+main .product-display img{
+    width: 185px;
+    height: 192px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+}
+main .product-display{
+    width:auto;
+    padding: 1rem;
+    height: 370px;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    cursor: pointer;
+}
+
+.product-display button{
+    width: 148px;
+    cursor: pointer;
+}
+.product-display button:hover{
+   opacity:0.8;
+}
+
+main .product-display i{
+    position: absolute;
+    top: 2%;
+    color: var(--lightGrey);
+    font-size: 20px;
+    right: 2%;
+    cursor: pointer;
+}
+
+main .product-display .wishlist:hover{
+    color:var(--font-primary);
+}
+

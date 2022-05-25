@@ -1,8 +1,8 @@
 import React,{Fragment} from 'react'
-import Card from '../../UI/Card'
+import{ Card} from '../../UI'
 import { popularItem } from '../../data'
 
-const PopularCategory = () => {
+export const PopularCategory = () => {
   return (
       <Fragment>
        <h2 class="heading-product">Popular Categories</h2>
@@ -11,7 +11,6 @@ const PopularCategory = () => {
          <div className="pc-first">
          <div className="flex-center-product">
              <img src={item.img}/>
-             {console.log(item.img)}
          </div>
          
              <ul>
@@ -30,4 +29,3 @@ const PopularCategory = () => {
   )
 }
 
-export default PopularCategory

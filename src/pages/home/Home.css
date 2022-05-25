@@ -347,7 +347,7 @@ margin-right:5px;
 
 .popular-item .item1{
     grid-row: 1/ span 2;
-    background: url(../img/camera.jpg);
+    background: url(../../img/camera.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: flex-start;
@@ -355,7 +355,7 @@ margin-right:5px;
 }
 
 .popular-item .item2{
-    background: url(../img/globe.jpg);
+    background: url(../../img/globe.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     flex-direction: column;
@@ -364,7 +364,7 @@ margin-right:5px;
 }
 
 .popular-item .item3{
-    background: url(../img/light.jpg);
+    background: url(../../img/light.jpg);
     background-size: cover;
     flex-direction: column;
     background-repeat: no-repeat;

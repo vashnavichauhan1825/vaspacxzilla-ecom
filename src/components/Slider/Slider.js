@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from '../../data';
+import { Link } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -79,7 +80,7 @@ const Button = styled.button`
   border:2px solid #3a7ce3;
 `;
 
-const Slider = () => {
+export const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -115,4 +116,3 @@ const Slider = () => {
   );
 };
 
-export default Slider;

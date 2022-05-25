@@ -3,7 +3,7 @@ import CategoryNav from './NavbarItem/CategoryNav'
 import InfoNav from './NavbarItem/InfoNav'
 import MainNav from './NavbarItem/MainNav';
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
       <Fragment>
          <InfoNav/>
@@ -13,4 +13,3 @@ const Navbar = () => {
   )
 }
 
-export default Navbar

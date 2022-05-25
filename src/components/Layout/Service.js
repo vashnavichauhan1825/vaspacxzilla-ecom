@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "../../UI/Card";
+import {Card} from "../../UI";
 import { serviceItems } from "../../data";
 
-const Service = () => {
+export const Service = () => {
   return (
     <Card>
       {serviceItems.map((item) => (
@@ -18,4 +18,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+

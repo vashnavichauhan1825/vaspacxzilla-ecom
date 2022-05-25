@@ -3,10 +3,10 @@ import Five from './stars/Five'
 import Four from './stars/Four'
 import Three from './stars/Three'
 import React,{Fragment} from 'react'
-import Card from '../../UI/Card'
+import {Card} from '../../UI'
 
 
-const Reviews = () => {
+export const Reviews = () => {
   return (
      
     <Fragment>
@@ -14,7 +14,7 @@ const Reviews = () => {
       <Card>
       {
           review.map((item)=>(
-            <div className='review'>
+            <div className='review' key={item.id}>
                   <small className="bold-grey-text">{item.date}</small>
                   <p>{item.name}</p>
                   
@@ -34,4 +34,3 @@ const Reviews = () => {
   )
 }
 
-export default Reviews;
