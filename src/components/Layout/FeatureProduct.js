@@ -7,7 +7,7 @@ import SpecialCountdown from './FeatureItem/SpecialCountdown'
 const FeatureProduct = () => {
   return (
    <Fragment>
-   <h2 class="heading-product">Featured Products</h2>
+   <h2 className="heading-product">Featured Products</h2>
    <SpecialProduct>
        <FourFeatOne/>
        <SpecialCountdown/>
