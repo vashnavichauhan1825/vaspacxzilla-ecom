@@ -16,7 +16,6 @@ export const Home = () => {
         <ImgLayout/>
         <Reviews/>
         <Newsletter/>
-        <Footer/>
     </WrapperNav>
     
   )
