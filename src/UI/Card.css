@@ -1,0 +1,28 @@
+.card{
+ display:flex;
+ height:auto;
+ justify-content:space-around;
+ margin:1rem 9rem;
+ flex-wrap:wrap;
+ gap:1rem;
+}
+
+.three-grid__cont{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0rem 10rem;
+    gap:1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .three-grid__cont {
+       display:grid;
+       grid-template-columns:1fr;
+       padding:1rem;
+       gap:1rem;
+    }
+    .card{
+        margin:1rem;  
+    }
+  }
