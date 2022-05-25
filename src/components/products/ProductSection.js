@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { FilterPanel } from './filter/FilterPanel'
-import { Product } from './product/Product';
+import { ProductCard } from './product/ProductCard';
 
 
 const CatalogSection =styled.div`
@@ -13,7 +13,7 @@ export const ProductSection = () => {
   return (
    <CatalogSection>
         <FilterPanel/>
-        <Product/>
+        <ProductCard/>
      </CatalogSection>
   )
 }
