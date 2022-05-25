@@ -1,12 +1,14 @@
 import React,{Fragment} from 'react'
 import {Footer,FeatureProduct, ImgLayout,Newsletter,
   PopularCategory,Service, Navbar,Reviews,Slider} from '../../components'
+import WrapperNav from '../../UI/wrapperNav/WrapperNav'
+
 import './Home.css'
 
 export const Home = () => {
   return (
-    <Fragment>
-        <Navbar/>
+   
+   <WrapperNav>
         <Slider/>
         <Service/>
         <FeatureProduct/>
@@ -15,7 +17,8 @@ export const Home = () => {
         <Reviews/>
         <Newsletter/>
         <Footer/>
-    </Fragment>
+    </WrapperNav>
+    
   )
 }
 

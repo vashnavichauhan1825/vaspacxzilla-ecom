@@ -14,7 +14,7 @@ export const Reviews = () => {
       <Card>
       {
           review.map((item)=>(
-            <div className='review'>
+            <div className='review' key={item.id}>
                   <small className="bold-grey-text">{item.date}</small>
                   <p>{item.name}</p>
                   
