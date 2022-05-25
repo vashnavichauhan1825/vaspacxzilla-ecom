@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../UI/Card";
+import {Card} from "../../UI";
 import { serviceItems } from "../../data";
 
 export const Service = () => {

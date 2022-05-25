@@ -1,7 +1,10 @@
 import React from 'react'
+import{ WrapperNav} from '../../UI'
 
 export const Catalog = () => {
   return (
-    <div>Catalog</div>
+   <WrapperNav>
+
+   </WrapperNav>
   )
 }

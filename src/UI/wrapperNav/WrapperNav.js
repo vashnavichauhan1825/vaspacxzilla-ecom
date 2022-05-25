@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment } from 'react/cjs/react.production.min'
 import { Navbar, Slider } from '../../components'
 
- const WrapperNav = ({children}) => {
+ export const WrapperNav = ({children}) => {
   return (
     <Fragment>
       <Navbar/>
@@ -11,5 +11,3 @@ import { Navbar, Slider } from '../../components'
   )
 }
 
-
-export default WrapperNav;

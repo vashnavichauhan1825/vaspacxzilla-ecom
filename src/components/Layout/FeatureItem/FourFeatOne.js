@@ -1,5 +1,5 @@
 import React from 'react'
-import FourItem from '../../../UI/FourItem'
+import {FourItem} from '../../../UI'
 import { featureItem } from '../../../data'
 
 const FourFeatOne = () => {

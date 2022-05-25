@@ -1,6 +1,7 @@
 import React from 'react'
 import './FourItem.css'
-const FourItem = (props) => {
+
+export const FourItem = (props) => {
   return (
     <div className='four__item'>
         {props.children}
@@ -8,4 +9,3 @@ const FourItem = (props) => {
   )
 }
 
-export default FourItem

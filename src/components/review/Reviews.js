@@ -3,7 +3,7 @@ import Five from './stars/Five'
 import Four from './stars/Four'
 import Three from './stars/Three'
 import React,{Fragment} from 'react'
-import Card from '../../UI/Card'
+import {Card} from '../../UI'
 
 
 export const Reviews = () => {
