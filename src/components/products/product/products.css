@@ -11,15 +11,14 @@ section{
 
 .catalog-nav{
     display: flex;
-    width: 62vw;
-    height: 50px;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 2%;
-    right: 7%;
+    padding:0.5rem;
 }
 
+.catalog-nav i{
+    cursor: pointer;
+}
 
 main{
     padding:1rem;
@@ -75,7 +74,7 @@ main .product-display i{
     cursor: pointer;
 }
 
-main .product-display i:hover{
+main .product-display .wishlist:hover{
     color:var(--font-primary);
 }
 

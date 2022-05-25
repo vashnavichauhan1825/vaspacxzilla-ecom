@@ -6,7 +6,7 @@ import { ProductCard } from './product/ProductCard';
 
 const CatalogSection =styled.div`
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     padding: 1.5rem;
 `
 export const ProductSection = () => {

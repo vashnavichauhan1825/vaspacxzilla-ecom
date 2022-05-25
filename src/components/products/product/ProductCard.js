@@ -55,7 +55,7 @@ export const ProductCard = () => {
                  
                   <i  onClick={() =>
                     dispatch({ type: "ADD_TO_WISHLIST", payload: products })
-                  }  className="fa fa-heart-o" aria-hidden="true"></i>
+                  }  className="fa fa-heart-o wishlist" aria-hidden="true"></i>
            { products.badge === "true" &&
             <div class="card-bookmark">
                 <i class="fa fa-bookmark bookmark-icon" aria-hidden="true"></i>
