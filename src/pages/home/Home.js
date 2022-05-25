@@ -1,9 +1,9 @@
 import React,{Fragment} from 'react'
 import {Footer,FeatureProduct, ImgLayout,Newsletter,
-  PopularCategory,Service, Navbar,Reviews,Slider} from '../components'
+  PopularCategory,Service, Navbar,Reviews,Slider} from '../../components'
 import './Home.css'
 
-const Home = () => {
+export const Home = () => {
   return (
     <Fragment>
         <Navbar/>
@@ -19,4 +19,3 @@ const Home = () => {
   )
 }
 
-export default Home
