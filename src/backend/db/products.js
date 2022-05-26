@@ -11,10 +11,12 @@ export const products = [
     image:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQf0rgYemTB60UMrvM2q-sUgprbDh2AAdIYL5YxI_MP9mHYqTK3NHhWCQden1iiLSKpEtb2ksc_xnpUuxROM_QqSArdGwB2w_Tvnk2Br7bFnoCflEHQFaFO3PE&usqp=CAE',
     alt:'space mug',
     title:'Space Mug',
-    price:'$89',
+    price:39,
     discountPrice:'$43',
     discount:"50% off",
     badge:"false",
+    brandName:"celestron",
+    categoryName:"books",
     category:'Glasses'
   },
   {

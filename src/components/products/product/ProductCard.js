@@ -1,27 +1,32 @@
 import axios from "axios";
 import {  useEffect } from "react";
 import { useProductContext } from "../../context/ProductContext";
+import { useFilterContext } from "components/context/filterContext";
 import CatalogSort from "./CatalogSort";
+import { FilterHook } from "components/hooks/FilterHook";
 import './products.css'
 
 export const ProductCard = () => {
  
-  const { products, dispatch } = useProductContext();
+  // const { products, dispatch } = useProductContext();
+  const {sortedProducts} = FilterHook();
+  const {dispatch } = useFilterContext();
 
  
   useEffect(() => {
     (async function () {
         const { data } = await axios.get("./api/products");
-        dispatch({ type: "GET_PRODUCT", payload: data.products });
+        dispatch({ type: "GET_PRODUCTS", payload: data.products });
       })();
-  }, );
+  }, []);
 
+  console.log(sortedProducts)
   return (
   
         <section>
         <CatalogSort/>
         <main>
-          {products.map((products) => {
+          {sortedProducts.map((products) => {
             console.log(products.title)
             return (
               
@@ -57,8 +62,8 @@ export const ProductCard = () => {
                     dispatch({ type: "ADD_TO_WISHLIST", payload: products })
                   }  className="fa fa-heart-o wishlist" aria-hidden="true"></i>
            { products.badge === "true" &&
-            <div class="card-bookmark">
-                <i class="fa fa-bookmark bookmark-icon" aria-hidden="true"></i>
+            <div className="card-bookmark">
+                <i className="fa fa-bookmark bookmark-icon" aria-hidden="true"></i>
             </div>}
 
               </div>

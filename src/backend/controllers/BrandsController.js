@@ -26,7 +26,7 @@ export const getAllBrandsHandler = function () {
 
 /**
  * This handler handles gets all brands in the db.
- * send GET Request at /api/user/brands/:brandId
+ * send GET Request at /api/user/brand/:brandId
  * */
 
 export const getBrandHandler = function (schema, request) {

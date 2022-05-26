@@ -18,6 +18,11 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
+import {
+  getAllBrandsHandler,
+  getBrandHandler,
+} from "./backend/controllers/BrandsController";
+
 import { getAllCouponsHandler } from "./backend/controllers/CouponController";
 import {
   getAllProductsHandler,
@@ -31,6 +36,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { brands } from "backend/db/brands";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -43,6 +49,7 @@ export function makeServer({ environment = "development" } = {}) {
       category: Model,
       user: Model,
       cart: Model,
+      brand: Model,
       wishlist: Model,
       address: Model,
     },
@@ -60,6 +67,7 @@ export function makeServer({ environment = "development" } = {}) {
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
+      brands.forEach((item) => server.create("brand", { ...item }));
     },
 
     routes() {
@@ -75,6 +83,10 @@ export function makeServer({ environment = "development" } = {}) {
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
+
+      // brands routes (public)
+      this.get("/brands", getAllBrandsHandler.bind(this));
+      this.get("/brands/:brandId", getBrandHandler.bind(this));
 
       // coupons route (public)
       this.get("/coupon", getAllCouponsHandler.bind(this));
