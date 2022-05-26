@@ -23,10 +23,10 @@ export const Brand =()=>{
        <p className="bold-white-text">Brand</p>
        {brandData.map((brand)=>{
          return(
-             <li>
+             <div key={brand.key}>
             <input checked={brands[brand.value]?? false} onChange={(e)=> dispatch({type:'FILTER_BRAND', payload: e.target.value,})} type='checkbox' value={brand.value}/>
-       <label htmlFor="vehicle1">{brand.brandName}</label><br/>
-       </li>
+       <label htmlFor="vehicle1">{brand.brandName}</label>
+       </div>
          )
        })}
       </div> 

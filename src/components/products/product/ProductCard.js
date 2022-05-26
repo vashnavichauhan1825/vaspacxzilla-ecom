@@ -42,7 +42,7 @@ export const ProductCard = () => {
                   />
                   <small className="bold-grey-text">{products.category}</small>
                <div>
-               <span>Coca-cola</span>
+               <span>{products.title}</span>
                </div>
               
                <small className="discount-cont"><s class="bold-grey-text margin-right-5px">{products.discountPrice}</s> <span class="r-color">{products.discount}</span></small>

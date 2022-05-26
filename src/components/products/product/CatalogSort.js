@@ -1,5 +1,6 @@
 import React from 'react'
 import './products.css'
+import SortFilter from './sorting/SortFilter'
 
 const CatalogSort = () => {
   return (
@@ -10,14 +11,7 @@ const CatalogSort = () => {
             <button class="icon-button bold-grey-text"><i class="fa fa-th" aria-hidden="true"></i></button>
         </div>
    
-<form>
-    <select class="bold-grey-text">
-      <option>Default Sorting</option>
-      <option>Home Decor</option>
-      <option>Telescope</option>
-      <option>Other</option>
-    </select>
-    </form>
+       <SortFilter/>
 </div>
   )
 }

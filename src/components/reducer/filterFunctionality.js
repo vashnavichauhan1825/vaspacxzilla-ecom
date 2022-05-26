@@ -1,5 +1,5 @@
 const getSortedProducts = (products, sort) => {
-  if (sort === "Hight-to-low") {
+  if (sort === "High-to-low") {
     return [...products].sort(
       (itemOne, itemTwo) => itemTwo["price"] - itemOne["price"]
     );
@@ -12,6 +12,7 @@ const getSortedProducts = (products, sort) => {
   }
   return products;
 };
+
 const categoryFilter = (products, categories) => {
   const filterCategories = [];
 
