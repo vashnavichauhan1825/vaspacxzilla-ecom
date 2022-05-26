@@ -17,7 +17,7 @@ const CatalogSort = () => {
       <option>Telescope</option>
       <option>Other</option>
     </select>
-     </form>
+    </form>
 </div>
   )
 }

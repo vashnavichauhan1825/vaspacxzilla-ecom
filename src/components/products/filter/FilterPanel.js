@@ -1,5 +1,6 @@
 import React from 'react'
 import './filter.css'
+
 export const FilterPanel = () => {
   return (
     <aside>
