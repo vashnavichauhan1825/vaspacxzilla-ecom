@@ -1,7 +1,6 @@
 export const filterReducer = (state, action) => {
   switch (action.type) {
-    case "SIDEBAR":
-      return { ...state, sidebar: !state.sidebar };
+  
 
     case "GET_PRODUCTS":
       return { ...state, products: action.payload };
@@ -51,7 +50,6 @@ export const filterReducer = (state, action) => {
           
     case "RESET":
       return {
-        sidebar: false,
         sort: null,
         price: 10000,
         brands: {},

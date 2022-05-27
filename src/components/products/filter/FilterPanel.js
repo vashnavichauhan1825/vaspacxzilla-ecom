@@ -7,7 +7,7 @@ import Price from './Price/Price'
 import RatingFilter from './rating/RatingFilter'
 
 export const FilterPanel = () => {
-  // const {sidebar} = useFilterContext();
+ 
   return (
     <aside>
    <small>Main/<small>Catelog</small></small>
