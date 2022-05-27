@@ -45,11 +45,11 @@ export const ProductCard = () => {
                 <small className="discount-cont">
                   <s class="bold-grey-text margin-right-5px">
                     {products.discountPrice}
-                  </s>{" "}
+                  </s>
                   <span class="r-color">{products.discount}</span>
                 </small>
 
-                <span className="bold-white-txt">{products.price}</span>
+                <span className="bold-white-txt">₹ {products.price}</span>
 
                 <button
                   onClick={() =>
@@ -57,8 +57,8 @@ export const ProductCard = () => {
                   }
                   className="primay-btn label-btn"
                 >
-                  {" "}
-                  Add Cart{" "}
+                 
+                  Add Cart
                 </button>
 
                 <i
