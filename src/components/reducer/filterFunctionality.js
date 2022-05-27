@@ -1,3 +1,5 @@
+
+
 const getSortedProducts = (products, sort) => {
   if (sort === "High-to-low") {
     return [...products].sort(
@@ -31,6 +33,7 @@ const categoryFilter = (products, categories) => {
   return filterCategories;
 };
 
+
 const brandFilter = (products, brands) => {
   const filteredBrands = [];
 
@@ -46,8 +49,17 @@ const brandFilter = (products, brands) => {
   }
   return filteredBrands;
 };
+
 const priceRangeSorter = (products, price) => {
   return products.filter((item) => item.price <= price);
 };
 
-export { getSortedProducts, priceRangeSorter, categoryFilter, brandFilter };
+const ratingSorter =(products,rating)=>{
+  return products.filter((item)=> item.rating >= rating)
+}
+
+const badgeFilter=(products,badge)=>{
+  return products.filter((item)=> item.badge)
+}
+
+export { getSortedProducts,ratingSorter,priceRangeSorter, categoryFilter,badgeFilter, brandFilter };

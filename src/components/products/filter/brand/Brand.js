@@ -25,7 +25,7 @@ export const Brand =()=>{
          return(
              <div key={brand.key}>
             <input checked={brands[brand.value]?? false} onChange={(e)=> dispatch({type:'FILTER_BRAND', payload: e.target.value,})} type='checkbox' value={brand.value}/>
-       <label htmlFor="vehicle1">{brand.brandName}</label>
+       <label >{brand.brandName}</label>
        </div>
          )
        })}

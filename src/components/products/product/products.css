@@ -1,6 +1,7 @@
 
 section{
     display:grid;
+    grid-template-rows:50px auto;
 }
 
 
@@ -19,6 +20,15 @@ section{
 .catalog-nav i{
     cursor: pointer;
 }
+
+.not-found-data{
+    width: auto;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+}
+
 
 main{
     padding:1rem;

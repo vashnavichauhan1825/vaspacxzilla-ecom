@@ -14,7 +14,8 @@ export const products = [
     price:3988,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"false",
+    badge:false,
+    rating:1,
     brandName:"celestron",
     categoryName:"home decor",
     category:'Glasses'
@@ -25,11 +26,12 @@ export const products = [
     alt:'space and beyond',
     title:'Space and beyond',
     price:3449,
+    rating:3,
     discountPrice:'$43',
     discount:"50% off",
     brandName:"celestron",
     categoryName:"books",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -40,9 +42,10 @@ export const products = [
     price:1239,
     discountPrice:'$43',
     discount:"50% off",
+    rating:3,
     brandName:"generic",
     categoryName:"home decor",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -55,7 +58,7 @@ export const products = [
     discount:"50% off",
     brandName:"aomeike",
     categoryName:"books",
-    badge:"false",
+    badge:false,
     category:'Glasses'
   },
   {
@@ -67,8 +70,9 @@ export const products = [
     discountPrice:'$43',
     discount:"50% off",
     brandName:"generic",
+    rating:5,
     categoryName:"books",
-    badge:"tfalse",
+    badge:false,
     category:'books'
   },
   {
@@ -79,9 +83,10 @@ export const products = [
     brandName:"meade",
     categoryName:"books",
     price:5089,
+    rating:3,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'books'
   },
   {
@@ -89,12 +94,13 @@ export const products = [
     image:'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTvcgXmDwbzegkGfZS9gOgqs5ld1o7O8HigwszpGzi68gaUCz-gioUh1UjpfOtt3DG2blOX_au-BSy8lG-1QdMDRL4bcO6A0l0yKUxsM_k&usqp=CAE',
     alt:'Space pillow',
     title:'Space pillow',
+    rating:1,
     brandName:"aomeike",
     categoryName:"home decor",
     price:3860,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -105,9 +111,10 @@ export const products = [
     brandName:"aomeike",
     categoryName:"astronomy",
     price:80,
+    rating:5,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -117,10 +124,11 @@ export const products = [
     title:'Phone stand',
     brandName:"celestron",
     categoryName:"home decor",
+    rating:4,
     price:850,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"false",
+    badge:false,
     category:'Glasses'
   },
   {
@@ -132,8 +140,9 @@ export const products = [
     categoryName:"clothes",
     price:180,
     discountPrice:'$43',
+    rating:2,
     discount:"50% off",
-    badge:"false",
+    badge:false,
     category:'Glasses'
   },
   {
@@ -143,10 +152,11 @@ export const products = [
     title:'T-shirt',
     brandName:"meade",
     categoryName:"clothes",
+    rating:2,
     price:80,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"false",
+    badge:false,
     category:'Glasses'
   },
   {
@@ -156,10 +166,11 @@ export const products = [
     title:'Star projector',
     brandName:"celestron",
     categoryName:"home decor",
+    rating:4,
     price:330,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -167,12 +178,13 @@ export const products = [
     image:'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRsLyconMjvIrO9cgBL3TU5U0lT_mMzl8F4Xlm8Jhg36uDnk8M3KvxeeaUTlpdt-t4mEaSBr1M_wcr4PfZZP5BA-FjQ7EwF5bwaGPtFdFvcgQF5exSZEIi6&usqp=CAE',
     alt:'space hoodie',
     title:'space hoodie',
+    rating:2,
     brandName:"aomeike",
     categoryName:"clothes",
     price:2380,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"false",
+    badge:false,
     category:'Glasses'
   },
   {
@@ -183,9 +195,10 @@ export const products = [
     brandName:"meade",
     categoryName:"home decor",
     price:8670,
+    rating:4,
     discountPrice:'$43',
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
   {
@@ -197,8 +210,9 @@ export const products = [
     categoryName:"astronomy",
     price:8560,
     discountPrice:'$43',
+    rating:2,
     discount:"50% off",
-    badge:"true",
+    badge:true,
     category:'Glasses'
   },
 ];

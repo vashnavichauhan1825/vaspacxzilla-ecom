@@ -7,6 +7,13 @@ export const filterReducer = (state, action) => {
       return { ...state, products: action.payload };
     case "RANGE":
       return { ...state, price: action.payload };
+
+      case "SORT_BY_RATING":
+        return{...state,rating:action.payload}
+      
+        case "BADGE":
+          return{...state}
+
     case "CATEGORIES":
       return {
         ...state,
@@ -33,13 +40,21 @@ export const filterReducer = (state, action) => {
         ...state,
         sort: "Low-to-high",
       };
+     
+      case "DEFAULT_SORT":
+          return{
+              ...state,
+              sort:null,
+          }
 
+   
+          
     case "RESET":
       return {
         sidebar: false,
         sort: null,
         price: 10000,
-        brand: {},
+        brands: {},
         categories: {},
         products: state.products,
       };
