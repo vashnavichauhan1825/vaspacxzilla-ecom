@@ -20,7 +20,11 @@ export const Brand =()=>{
     return (
         <>
         <div className="brand">
-       <p className="bold-white-text">Brand</p>
+        <div className="contact-nav-btn">
+        <p className="bold-white-text">Brand</p>
+        <button className="bold-grey-text clear-btn" onClick={()=> dispatch({type:"RESET"})}><u>Clear All</u></button>
+        </div>
+      
        {brandData.map((brand)=>{
          return(
              <div key={brand.key}>

@@ -12,21 +12,26 @@ const RatingFilter = () => {
         <div>
           <input
             type="radio"
-            onClick={(e) =>
+            onChange={(e) =>
               dispatch({
                 type: "SORT_BY_RATING",
                 payload: e.target.value,
               })
             }
-            id="vehicle1"
+            id={`${num}stars`}
             name="vehicle1"
             value={num}
+            checked={Number(rating)===num?true:false}
           />
-          <label htmlFor="vehicle1">
+          {console.log(typeof num)}
+          {console.log(typeof rating)}
+          {console.log(Number(rating)===num)}
+
+          <label  htmlFor={`${num}stars`}>
             {num} <i className="fa fa-star r-color" aria-hidden="true"></i> & UP
              
           </label>
-          <br />
+         
         </div>
       ))}
       {/* <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>

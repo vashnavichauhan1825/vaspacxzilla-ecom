@@ -12,8 +12,8 @@ export const filterReducer = (state, action) => {
         return{...state,rating:action.payload}
       
         case "BADGE":
-          return{...state}
-
+          return{...state,badge:action.payload}
+          
     case "CATEGORIES":
       return {
         ...state,
@@ -55,6 +55,7 @@ export const filterReducer = (state, action) => {
         sort: null,
         price: 10000,
         brands: {},
+        rating:0,
         categories: {},
         products: state.products,
       };

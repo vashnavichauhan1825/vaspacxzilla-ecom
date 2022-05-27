@@ -25,10 +25,16 @@ font-size: 0.8rem;
     font-size:0.7rem;
 }
  
+.brand .clear-btn{
+    background:transparent;
+    border:none;
+}
+.price-range input{
+    width:100%;
+}
 .price-range{
     border-bottom: 1px solid var(--lightGrey);
     padding: 5px 0px;
-    width:150px;
 }
 
 .price-range div{
