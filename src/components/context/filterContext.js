@@ -5,7 +5,7 @@ const FilterContext = createContext();
 const FilterProductProvider = ({ children }) => {
   const [{  sort,badge, rating,price, categories, brands, products }, dispatch,] =
     useReducer(filterReducer, {
-      
+     
       sort: null,
       price: 10000,
       rating:0,

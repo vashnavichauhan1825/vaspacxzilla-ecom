@@ -1,18 +1,16 @@
 export const filterReducer = (state, action) => {
   switch (action.type) {
-  
-
     case "GET_PRODUCTS":
       return { ...state, products: action.payload };
     case "RANGE":
       return { ...state, price: action.payload };
 
-      case "SORT_BY_RATING":
-        return{...state,rating:action.payload}
-      
-        case "BADGE":
-          return{...state,badge:action.payload}
-          
+    case "SORT_BY_RATING":
+      return { ...state, rating: action.payload };
+
+    case "BADGE":
+      return { ...state, badge: action.payload };
+
     case "CATEGORIES":
       return {
         ...state,
@@ -39,21 +37,25 @@ export const filterReducer = (state, action) => {
         ...state,
         sort: "Low-to-high",
       };
-     
-      case "DEFAULT_SORT":
-          return{
-              ...state,
-              sort:null,
-          }
 
-   
-          
+    case "DEFAULT_SORT":
+      return {
+        ...state,
+        sort: null,
+      };
+
+    case "LOADING":
+      return {
+        ...state,
+        loading: !state.loading,
+      };
+
     case "RESET":
       return {
         sort: null,
         price: 10000,
         brands: {},
-        rating:0,
+        rating: 0,
         categories: {},
         products: state.products,
       };

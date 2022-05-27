@@ -12,15 +12,19 @@ export const ProductCard = () => {
   const { dispatch } = useFilterContext();
 
   useEffect(() => {
+    
     (async function () {
       const { data } = await axios.get("./api/products");
       dispatch({ type: "GET_PRODUCTS", payload: data.products });
+     
     })();
   }, []);
 
   let productLength = sortedProducts.length;
   return (
     <section>
+   
+     
       <CatalogSort />
       {productLength ? (
         <main>
@@ -81,7 +85,8 @@ export const ProductCard = () => {
         <h1>No data found !</h1>
           <img src="https://media.giphy.com/media/gyr5H37A484WqdFXJ7/giphy.gif" />
         </div>
-      )}
+       
+      )} 
     </section>
   );
 };
