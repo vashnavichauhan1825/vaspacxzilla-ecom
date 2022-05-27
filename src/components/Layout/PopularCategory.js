@@ -1,5 +1,5 @@
 import React,{Fragment} from 'react'
-import{ Card} from '../../UI'
+import { Card} from '../../UI'
 import { popularItem } from '../../data'
 
 export const PopularCategory = () => {

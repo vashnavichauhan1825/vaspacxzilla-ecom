@@ -1,23 +1,17 @@
 import React from 'react'
 import './products.css'
+import SortFilter from './sorting/SortFilter'
 
 const CatalogSort = () => {
   return (
-    <div class="catalog-nav">
+    <div className="catalog-nav">
     
-        <div class="contact-nav-btn">
-            <button class="icon-button bold-grey-text"><i class="fa fa-bars" aria-hidden="true"></i></button>
-            <button class="icon-button bold-grey-text"><i class="fa fa-th" aria-hidden="true"></i></button>
+        <div className="contact-nav-btn">
+            <button className="icon-button bold-grey-text"><i className="fa fa-bars" aria-hidden="true"></i></button>
+            <button className="icon-button bold-grey-text"><i className="fa fa-th" aria-hidden="true"></i></button>
         </div>
    
-<form>
-    <select class="bold-grey-text">
-      <option>Default Sorting</option>
-      <option>Home Decor</option>
-      <option>Telescope</option>
-      <option>Other</option>
-    </select>
-     </form>
+       <SortFilter/>
 </div>
   )
 }
