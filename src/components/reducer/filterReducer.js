@@ -8,19 +8,22 @@ export const filterReducer = (state, action) => {
     case "SORT_BY_RATING":
       return { ...state, rating: action.payload };
 
-    case "BADGE":
-      return { ...state, badge: action.payload };
+   
 
     case "CATEGORIES":
-      return {
+     return {
         ...state,
         categories: {
           ...state.categories,
           [action.payload]: !state.categories[action.payload],
         },
       };
+    
+     
+      
+     
     case "FILTER_BRAND":
-      return {
+      return  {
         ...state,
         brands: {
           ...state.brands,

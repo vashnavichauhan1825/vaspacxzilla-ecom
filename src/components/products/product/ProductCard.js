@@ -29,7 +29,7 @@ export const ProductCard = () => {
       {productLength ? (
         <main>
           {sortedProducts.map((products) => {
-            console.log(products.title);
+            {/* console.log(products.title); */}
             return (
               <div key={products.id} className="product-display">
                 <img
