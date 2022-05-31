@@ -44,6 +44,47 @@ export const filterReducer = (state, action) => {
         sort: null,
       };
 
+      case "GET_CART":
+        return{
+          ...state,cart:[...state.cart],
+        }
+
+       case "ADD_TO_CART":
+         return{
+           ...state,cart:[...state.cart,action.payload],
+         } 
+       
+        case "ADD_TOAST":
+          return{
+            ...state,
+            showToast:{
+              text:action.payload,
+              trigger:!state.showToast.trigger,
+              selector:"success",
+            },
+          }
+
+          case "FAILED_TOAST":
+            return {
+              ...state,
+              forToast: {
+                text: action.payload,
+                trigger: !state.forToast.trigger,
+                selector: "error",
+              },
+            };
+      
+         
+          case "TOAST_STATE_CLEAN":
+            return {
+              ...state,
+              forToast: {
+                text: "",
+                trigger: false,
+                selector: "",
+              },
+            };
+      
     case "LOADING":
       return {
         ...state,
