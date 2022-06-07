@@ -1,6 +1,9 @@
+import { useCartContext } from 'components/context/cartContext'
 import React from 'react'
 
 const CategoryNav = () => {
+
+  const {cartProducts} = useCartContext();
   return (
     <div className="category-nav">
     
@@ -22,7 +25,7 @@ const CategoryNav = () => {
                 <a className="icon-button bold-white-txt" href="/"><i className="fa fa-heart-o" aria-hidden="true"></i>Wishlist</a> 
                 <div className="badge"> 
                     <a href="/"><i className="fa fa-shopping-cart x-icon" aria-hidden="true"></i></a>
-                     <span className="icon-badge icon-bell">+11</span>
+                     <span className="icon-badge icon-bell">{cartProducts.length}</span>
                      </div>
             </div>
         </div>

@@ -1,13 +1,13 @@
 import { Response } from "miragejs";
 
 /**
- * All the routes related to brands are present here.
+ * All the routes related to Brand are present here.
  * These are Publicly accessible routes.
  * */
 
 /**
- * This handler handles gets all categories in the db.
- * send GET Request at /api/categories
+ * This handler handles gets all brands in the db.
+ * send GET Request at /api/brands
  * */
 
 export const getAllBrandsHandler = function () {
@@ -35,7 +35,7 @@ export const getBrandHandler = function (schema, request) {
     const brand = schema.categories.findBy({ _id: brandId });
     return new Response(200, {}, { brand });
   } catch (error) {
-    return new Response(
+    new Response(
       500,
       {},
       {

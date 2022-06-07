@@ -5,18 +5,25 @@ import { useFilterContext } from "components/context/filterContext";
 import CatalogSort from "./CatalogSort";
 import { FilterHook } from "components/hooks/FilterHook";
 import "./products.css";
+import { useCartContext } from "components/context/cartContext";
 
 export const ProductCard = () => {
   // const { products, dispatch } = useProductContext();
   const { sortedProducts } = FilterHook();
   const { dispatch } = useFilterContext();
+ const {cartProducts, addToCart}= useCartContext();
 
   useEffect(() => {
     
     (async function () {
-      const { data } = await axios.get("./api/products");
-      dispatch({ type: "GET_PRODUCTS", payload: data.products });
-     
+      try {
+        const { data } = await axios.get("./api/products");
+        dispatch({ type: "GET_PRODUCTS", payload: data.products });
+       
+      } catch (error) {
+        console.log(error)
+      }
+    
     })();
   }, []);
 
@@ -52,9 +59,9 @@ export const ProductCard = () => {
                 <span className="bold-white-txt">₹ {products.price}</span>
 
                 <button
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: products })
-                  }
+                 onClick={() => {
+                        addToCart(products);
+                      }}
                   className="primay-btn label-btn"
                 >
                  
