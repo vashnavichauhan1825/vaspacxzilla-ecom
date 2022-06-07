@@ -11,7 +11,7 @@ export const ProductCard = () => {
   // const { products, dispatch } = useProductContext();
   const { sortedProducts } = FilterHook();
   const { dispatch } = useFilterContext();
- const {cartProducts, addToCart}= useCartContext();
+ const {cartProducts,removeFromCart, addToCart}= useCartContext();
 
   useEffect(() => {
     
@@ -57,8 +57,12 @@ export const ProductCard = () => {
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
-
-                <button
+                {cartProducts.some((item) => item.id === products.id) ?(
+                  <button  onClick={() => {
+                    removeFromCart(products);
+                  }} className="primay-btn label-btn">Remove from Cart</button>
+                ):
+               ( <button
                  onClick={() => {
                         addToCart(products);
                       }}
@@ -66,8 +70,8 @@ export const ProductCard = () => {
                 >
                  
                   Add Cart
-                </button>
-
+                </button>)
+                }
                 <i
                   onClick={() =>
                     dispatch({ type: "ADD_TO_WISHLIST", payload: products })

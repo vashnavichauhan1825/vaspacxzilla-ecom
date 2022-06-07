@@ -1,9 +1,12 @@
 import { useCartContext } from 'components/context/cartContext'
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom';
 
 const CategoryNav = () => {
 
   const {cartProducts} = useCartContext();
+
+const path = useLocation();
   return (
     <div className="category-nav">
     
@@ -24,7 +27,7 @@ const CategoryNav = () => {
             <div className="contact-nav-btn">
                 <a className="icon-button bold-white-txt" href="/"><i className="fa fa-heart-o" aria-hidden="true"></i>Wishlist</a> 
                 <div className="badge"> 
-                    <a href="/"><i className="fa fa-shopping-cart x-icon" aria-hidden="true"></i></a>
+                    <Link to="/cart"><i className="fa fa-shopping-cart x-icon" aria-hidden="true"></i></Link>
                      <span className="icon-badge icon-bell">{cartProducts.length}</span>
                      </div>
             </div>
