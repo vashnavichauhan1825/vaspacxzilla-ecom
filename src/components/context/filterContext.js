@@ -18,13 +18,13 @@ const FilterProductProvider = ({ children }) => {
   return (
     <FilterContext.Provider
       value={{
-        forToast,
         sort,
         rating,
         badge,
         products,
         price,
         categories,
+        forToast,
         brands,
         dispatch,
       }}

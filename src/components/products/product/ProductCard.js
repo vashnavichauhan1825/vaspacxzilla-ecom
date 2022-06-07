@@ -6,13 +6,14 @@ import CatalogSort from "./CatalogSort";
 import { FilterHook } from "components/hooks/FilterHook";
 import "./products.css";
 import { useCartContext } from "components/context/cartContext";
+import { useWishlistContext } from "components/context/WishlistContext";
 
 export const ProductCard = () => {
   // const { products, dispatch } = useProductContext();
   const { sortedProducts } = FilterHook();
   const { dispatch } = useFilterContext();
  const {cartProducts,removeFromCart, addToCart}= useCartContext();
-
+const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
   useEffect(() => {
     
     (async function () {
@@ -36,7 +37,7 @@ export const ProductCard = () => {
       {productLength ? (
         <main>
           {sortedProducts.map((products) => {
-            console.log(products.title);
+          
             return (
               <div key={products.id} className="product-display">
                 <img
@@ -72,13 +73,19 @@ export const ProductCard = () => {
                   Add Cart
                 </button>)
                 }
-                <i
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_WISHLIST", payload: products })
-                  }
+                {wishlistItems.some((item)=> item.id === products.id)?( <i
+                  onClick={() => {
+                      removeFromWishlist(products);
+                    }}
                   className="fa fa-heart-o wishlist"
                   aria-hidden="true"
-                ></i>
+                ></i>):( <i
+                  onClick={() => {
+                      addToWishlist(products);
+                    }}
+                  className="fa fa-heart-o wishlist"
+                  aria-hidden="true"
+                ></i>)}
                 {products.badge === true && (
                   <div className="card-bookmark">
                     <i

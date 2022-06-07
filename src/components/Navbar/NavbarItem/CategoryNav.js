@@ -25,7 +25,7 @@ const path = useLocation();
                 </div>
     
             <div className="contact-nav-btn">
-                <a className="icon-button bold-white-txt" href="/"><i className="fa fa-heart-o" aria-hidden="true"></i>Wishlist</a> 
+                <Link className="icon-button bold-white-txt" to="/wishlist"><i className="fa fa-heart-o" aria-hidden="true"></i>Wishlist</Link> 
                 <div className="badge"> 
                     <Link to="/cart"><i className="fa fa-shopping-cart x-icon" aria-hidden="true"></i></Link>
                      <span className="icon-badge icon-bell">{cartProducts.length}</span>

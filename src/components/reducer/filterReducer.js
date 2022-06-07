@@ -11,6 +11,7 @@ export const filterReducer = (state, action) => {
     case "BADGE":
       return { ...state, badge: action.payload };
 
+
     case "CATEGORIES":
       return {
         ...state,
@@ -80,6 +81,9 @@ export const filterReducer = (state, action) => {
         },
       };
 
+      case "CHANGE_QTY":
+        return {...state,cart:action.payload}
+        
     // toast state handler
     case "TOAST_STATE_CLEAN":
       return {
