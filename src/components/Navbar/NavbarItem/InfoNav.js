@@ -1,6 +1,8 @@
-import React from "react";
+import { useAuthCtx } from "components/context/authContext";
+import { Link } from "react-router-dom";
 
 const InfoNav = () => {
+  const {isLoggedIn,logout} = useAuthCtx();
   return (
     <div className="contact-nav" id="hidden__cont">
       <div>
@@ -14,11 +16,15 @@ const InfoNav = () => {
             <i className="fa fa-github" aria-hidden="true"></i>Github
           </button>
         </a>
-        <a href="/">
+       {isLoggedIn?( <a onClick={logout}>
           <button className="icon-button bold-grey-text pointer">
-            <i className="fa fa-twitter" aria-hidden="true"></i>Twitter
+          <i className="fa fa-sign-out"></i> Logout
           </button>
-        </a>
+        </a>) :(<Link to="/signup">
+          <button className="icon-button bold-grey-text pointer">
+          <i className="fa fa-sign-in"></i> LogIn
+          </button>
+        </Link>)}
       </div>
     </div>
   );

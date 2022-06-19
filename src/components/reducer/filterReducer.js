@@ -103,6 +103,7 @@ export const filterReducer = (state, action) => {
         brands: {},
         rating: 0,
         categories: {},
+        forToast: { text: "", trigger: false, selector: "" },
         products: state.products,
       };
     default:

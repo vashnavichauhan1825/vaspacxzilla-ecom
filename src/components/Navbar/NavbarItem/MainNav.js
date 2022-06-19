@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MainNav = () => {
   return (
@@ -25,9 +26,9 @@ const MainNav = () => {
           Help <i className="fa fa-angle-down" aria-hidden="true"></i>
         </small>
         <div className="cart-nav-cont">
-          <a href="#">
+          <Link to="/signup">
             <i className="fa fa-shopping-basket pointer" aria-hidden="true"></i>
-          </a>
+          </Link>
           <small id="hidden__cont">My Account</small>
         </div>
       </div>
