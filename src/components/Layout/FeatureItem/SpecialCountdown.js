@@ -10,7 +10,7 @@ const SpecialCountdown = () => {
     let interval = useRef();
 
     const startTimer = () => {
-        const countdownDate =new Date('May 30 2022 00:00:00').getTime();
+        const countdownDate =new Date('November 30 2022 00:00:00').getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
