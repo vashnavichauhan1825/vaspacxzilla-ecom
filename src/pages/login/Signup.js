@@ -24,6 +24,7 @@ const Signup = () => {
       navigate('/');
     }
 
+  
 
 
   return (
@@ -37,17 +38,17 @@ const Signup = () => {
             </small>
           </div>
           <label>First Name</label>
-          <input className="input" type="text" required onChange={(e) =>
+          <input className="input" type="text"  onChange={(e) =>
           setFormInfo({ ...formInfo, firstName: e.target.value })}  placeholder="First Name" />
           <label>E-mail</label>
-          <input className="input" type="email" required onChange={(e) =>
+          <input className="input" type="email"  onChange={(e) =>
           setFormInfo({ ...formInfo, email: e.target.value })}  placeholder="E-mail" />
           <label>Password</label>
-          <input className="input" type="password" required onChange={(e) =>
+          <input className="input" type="password"  onChange={(e) =>
           setFormInfo({ ...formInfo, password: e.target.value })} placeholder="Password" />
           <div className="btn-container-login">
             <button className="btn-create">Create an account</button>
-            <button className="btn-sign">
+            <button  className="btn-sign">
               <i className="fa fa-google-plus-square" aria-hidden="true"></i>Sign up
               with Google
             </button>

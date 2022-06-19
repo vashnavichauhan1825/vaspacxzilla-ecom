@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { filterReducer } from 'components/reducer/filterReducer';
 import { createContext, useState, useContext} from 'react';
 import { useCartContext } from './cartContext';
 import { useFilterContext } from './filterContext';
@@ -25,7 +24,7 @@ const AuthProvider =({children})=>{
     const [token,setToken] = useState(tokenInLocalStorage?.token)
 
     const isUserLoggedIn = !!token
-    console.log(isUserLoggedIn)
+   
    
     const signUpHandler=async(formInfo)=>{
        
@@ -62,7 +61,6 @@ const AuthProvider =({children})=>{
         dispatch({ type: "ERROR_TOAST", payload: "Logged Out" });
         setCartProducts([]);
         setWishlistItems([]);
-        console.log(isUserLoggedIn)
     }
 
     const contextValue={
@@ -71,8 +69,10 @@ const AuthProvider =({children})=>{
         login:loginHandler,
         signup:signUpHandler,
         logout:logoutHandler,
+        user:user,
     }
 
+   
     return(
         <authContext.Provider value={contextValue}>
             {children}
