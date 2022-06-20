@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const InfoNav = () => {
   const {isLoggedIn,logout} = useAuthCtx();
+
   return (
     <div className="contact-nav" id="hidden__cont">
       <div>
@@ -20,7 +21,7 @@ const InfoNav = () => {
           <button className="icon-button bold-grey-text pointer">
           <i className="fa fa-sign-out"></i> Logout
           </button>
-        </a>) :(<Link to="/signup">
+        </a>) :(<Link to="/signin">
           <button className="icon-button bold-grey-text pointer">
           <i className="fa fa-sign-in"></i> LogIn
           </button>

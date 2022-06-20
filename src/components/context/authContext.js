@@ -19,11 +19,10 @@ const AuthProvider =({children})=>{
     const {dispatch}=  useFilterContext();
     const {setCartProducts}= useCartContext();
     const {setWishlistItems} = useWishlistContext();
-    const userInLocalStorage = localStorage.getItem('user')
-    const tokenInLocalStorage = localStorage.getItem('token')
-   
-    const [user,setUser] = useState(userInLocalStorage?.user)
-    const [token,setToken] = useState(tokenInLocalStorage?.token)
+    const userInLocalStorage = localStorage.getItem("user")
+    const tokenInLocalStorage = localStorage.getItem("token")
+    const [user,setUser] = useState(userInLocalStorage)
+    const [token,setToken] = useState(tokenInLocalStorage)
 
     const isUserLoggedIn = !!token
    
@@ -59,7 +58,10 @@ const AuthProvider =({children})=>{
           if(responseData.status === 200){
             localStorage.setItem("token", responseData.data.encodedToken);
             localStorage.setItem("user", responseData.data.foundUser.firstName);
-            dispatch({ type: "SUCCESS_TOAST", payload: "Log In Successful" });
+            setToken(responseData.data.encodedToken);
+            console.log(isUserLoggedIn)
+            setUser(responseData.data.foundUser.firstName)
+            dispatch({ type: "SUCCESS_TOAST", payload: `${responseData.data.foundUser.firstName} logged in !` });
           }
             
           } catch (error) {
@@ -68,9 +70,9 @@ const AuthProvider =({children})=>{
           }
   }
     const logoutHandler=()=>{
-        
         localStorage.clear();
         setToken(null);
+        setUser("");
         dispatch({ type: "ERROR_TOAST", payload: "Logged Out" });
         setCartProducts([]);
         setWishlistItems([]);

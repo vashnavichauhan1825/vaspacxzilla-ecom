@@ -1,9 +1,10 @@
 import { useAuthCtx } from "components/context/authContext";
+import Signin from "pages/login/Signin";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const MainNav = () => {
-  
+  const {user} = useAuthCtx();
   return (
     <div className="search-nav">
       <span className="vaspacx">
@@ -28,10 +29,10 @@ const MainNav = () => {
           Help <i className="fa fa-angle-down" aria-hidden="true"></i>
         </small>
         <div className="cart-nav-cont">
-          <Link to="/signup">
+          <Link to="/signin" elements={<Signin/>}>
             <i className="fa fa-shopping-basket pointer" aria-hidden="true"></i>
           </Link>
-          <small id="hidden__cont"> Account</small>
+          <small id="hidden__cont">{user} Account</small>
         </div>
       </div>
     </div>

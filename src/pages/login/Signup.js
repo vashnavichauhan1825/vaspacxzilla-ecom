@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import "./login.css";
 import { useAuthCtx } from "components/context/authContext";
 import {Link, useNavigate } from "react-router-dom";
+import Signin from "./Signin";
 
 const Signup = () => {
     // const inputPassword = useRef();
@@ -32,7 +33,7 @@ const Signup = () => {
           <h1>Sign Up</h1>
           <div>
             <small className="text-grey">
-              Already a member?<Link to="/signin"><u className="bold-white-txt"> Log In</u></Link>
+              Already a member?<Link to="/signin" elements={<Signin/>}><u className="bold-white-txt"> Log In</u></Link>
             </small>
           </div>
           <label>First Name</label>

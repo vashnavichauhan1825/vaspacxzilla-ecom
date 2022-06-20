@@ -5,6 +5,7 @@ import { useAuthCtx } from "components/context/authContext";
 import axios from "axios";
 import { Navbar } from "components";
 import "./login.css";
+import { Toast } from "components/Toast/Toast";
 const Signin = () => {
   const { login } = useAuthCtx();
   const navigate = useNavigate();
@@ -12,21 +13,21 @@ const Signin = () => {
     email: "",
     password: "",
   });
-  const loginSubmitHandler = (e,formInfo) => {
+  const loginSubmitHandler = (e) => {
     e.preventDefault();
     login(formInfo);
-   
-    console.log("hfduwj");
+    navigate('/')
   };
 
   const guestHandler = () => {
-    setFormInfo(() => ({ email: "superman18@gmail.com", password: "1234" }));
-    console.log("forminfo", formInfo);
+    setFormInfo({...formInfo,email: "vaspacxguest1821@gmail.com", password: "1821"} );
   };
 
   return (
+    <>
+    <Toast/>
     <ShopNowWrapper>
-      <form  className="container-login">
+      <form  onSubmit={loginSubmitHandler} className="container-login">
         <div className="cont-left">
           <h1>Hi, Welcome Back!</h1>
           <div>
@@ -62,12 +63,12 @@ const Signin = () => {
             <u className="text-grey pointer">Forgot Password?</u>
           </small>
           <div className="btn-container-login">
-            <button onClick={(e)=>loginSubmitHandler(e,formInfo)} type="submit" className="btn-create">
+            <button onClick={(e)=>loginSubmitHandler(e,formInfo)} type="click" className="btn-create">
               Sign In
             </button>
             <button
               onClick={() => guestHandler()}
-              type="click"
+              type="submit"
               className="btn-sign"
             >
               <i className="fa fa-google-plus-square" aria-hidden="true"></i>
@@ -80,6 +81,7 @@ const Signin = () => {
         </div>
       </form>
     </ShopNowWrapper>
+    </>
   );
 };
 
