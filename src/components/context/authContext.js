@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useState, useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCartContext } from './cartContext';
 import { useFilterContext } from './filterContext';
 import { useWishlistContext } from './WishlistContext';
@@ -14,6 +15,7 @@ const authContext = createContext({
 });
 
 const AuthProvider =({children})=>{
+    const navigate = useNavigate();
     const {dispatch}=  useFilterContext();
     const {setCartProducts}= useCartContext();
     const {setWishlistItems} = useWishlistContext();
@@ -28,31 +30,42 @@ const AuthProvider =({children})=>{
    
     const signUpHandler=async(formInfo)=>{
        
-        const {firstName,email,password} = formInfo;
-       console.log(firstName)
+     
+       console.log(formInfo)
         try {
             const response =await axios.post("/api/auth/signup",{
-                email:email,
-                password:password,
-                firstName:firstName,
+              ...formInfo
             })
             
             if(response.status === 201){
-                console.log("sucess",response);
-                localStorage.setItem('token',response.data.encodedToken)
-                localStorage.setItem('user',response.data.createdUser.firstName)
-                setToken(response.data.encodedToken)
-                setUser(response.data.createdUser)
-                console.log('user',response.data.encodedToken)
+               
+                 navigate('/signin')
+                 console.log(response)
+               
             }
         } catch (error) {
             console.log(error)
         }   
      }
   
-    const loginHandler =(token)=>{
-        setToken(token)
-     localStorage.setItem('token',token);
+    const loginHandler =async(formInfo)=>{
+        console.log("logiiin",formInfo);
+        try {
+          
+            const responseData  = await axios.post('/api/auth/login', {
+            ...formInfo
+            });
+            console.log(responseData)
+          if(responseData.status === 200){
+            localStorage.setItem("token", responseData.data.encodedToken);
+            localStorage.setItem("user", responseData.data.foundUser.firstName);
+            dispatch({ type: "SUCCESS_TOAST", payload: "Log In Successful" });
+          }
+            
+          } catch (error) {
+            dispatch({ type: "ERROR_TOAST", payload: error.response.data.errors });
+            console.log(error)
+          }
   }
     const logoutHandler=()=>{
         

@@ -1,72 +1,86 @@
-import './login.css';
-import { useRef, useState} from 'react';
-import {useNavigate}from 'react-router-dom'
-import ShopNowWrapper from 'UI/vaspacxlogo/ShopNowWrapper';
-import { useAuthCtx } from 'components/context/authContext';
-import axios from 'axios';
-import { Navbar } from 'components';
-
+import { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import ShopNowWrapper from "UI/vaspacxlogo/ShopNowWrapper";
+import { useAuthCtx } from "components/context/authContext";
+import axios from "axios";
+import { Navbar } from "components";
+import "./login.css";
 const Signin = () => {
-    // const redirect = useHistory();
-    const inputEmailRef = useRef();
-    const inputPasswordRef = useRef();
-    const [formInfo, setFormInfo]= useState({
-      email:"",
-      password:""
-    })
-    const navigate = useNavigate();
-    const{ login,isLoggedIn} =useAuthCtx();
-
-    const submitHandler = async (event) => {
-        event.preventDefault();
-    
-        const emailInputValue = inputEmailRef.current.value;
-        const passwordRef = inputPasswordRef.current.value;
-       
-        // try {
-        //   const responseData =await
-      await axios
-          .post("/api/auth/login", {
-            email: emailInputValue,
-            password: passwordRef,
-          })
-          .then((res) => {
-           
-            login(res.data.encodedToken);
-            console.log(res)
-            console.log(res.data.encodedToken) 
-            navigate('/catalog', { replace: true })
-             alert("logged in")
-          })
-          .catch((error) => {
-           alert(error);
-           console.log(error)
-          });
-        };
-  return (
-   <ShopNowWrapper>
+  const { login } = useAuthCtx();
+  const navigate = useNavigate();
+  const [formInfo, setFormInfo] = useState({
+    email: "",
+    password: "",
+  });
+  const loginSubmitHandler = (e,formInfo) => {
+    e.preventDefault();
+    login(formInfo);
    
-      <form onSubmit={submitHandler} className="container-login">
-          <div className="cont-left">
-              <h1>Hi, Welcome Back!</h1>
-              <div>
-                  <small className="text-grey">Don't have an account ?<a href="signup.html"><u className='bold-white-txt'> Sign up</u></a></small>
-              </div>
-              <label>E-mail</label><br/>
-              <input id="input" type="email" required ref={inputEmailRef}  placeholder="E-mail"/>
-              <label>Password</label><br/>
-              <input id="input" type="password" required ref={inputPasswordRef} placeholder="Password"/>
-              <small> <u className="text-grey pointer">Forgot Password?</u></small>
-              <div className="btn-container-login"><button className="btn-create">Sign In</button>
-              <button  className="btn-sign"><i className="fa fa-google-plus-square" aria-hidden="true"></i>Sign in with Google</button>
-              </div>
-              <small className="text-grey">@vaspacx-Privacy Policy and Terms of Service apply.</small>
-            </div>
-           
-      </form>
-      </ShopNowWrapper>
-  
-  )
-}
+    console.log("hfduwj");
+  };
 
-export default Signin
+  const guestHandler = () => {
+    setFormInfo(() => ({ email: "superman18@gmail.com", password: "1234" }));
+    console.log("forminfo", formInfo);
+  };
+
+  return (
+    <ShopNowWrapper>
+      <form  className="container-login">
+        <div className="cont-left">
+          <h1>Hi, Welcome Back!</h1>
+          <div>
+            <small className="text-grey">
+              Don't have an account ?
+              <Link to="/signup">
+                <u className="bold-white-txt"> Sign up</u>
+              </Link>
+            </small>
+          </div>
+          <label>E-mail</label>
+          <br />
+          <input
+            className="input"
+            onChange={(data) =>
+              setFormInfo({ ...formInfo, email: data.target.value })
+            }
+            type="email"
+            placeholder="E-mail"
+          />
+          <label>Password</label>
+          <br />
+          <input
+            className="input"
+            onChange={(data) =>
+              setFormInfo({ ...formInfo, password: data.target.value })
+            }
+            type="password"
+            placeholder="Password"
+          />
+          <small>
+           
+            <u className="text-grey pointer">Forgot Password?</u>
+          </small>
+          <div className="btn-container-login">
+            <button onClick={(e)=>loginSubmitHandler(e,formInfo)} type="submit" className="btn-create">
+              Sign In
+            </button>
+            <button
+              onClick={() => guestHandler()}
+              type="click"
+              className="btn-sign"
+            >
+              <i className="fa fa-google-plus-square" aria-hidden="true"></i>
+              Sign in with Google
+            </button>
+          </div>
+          <small className="text-grey">
+            @vaspacx-Privacy Policy and Terms of Service apply.
+          </small>
+        </div>
+      </form>
+    </ShopNowWrapper>
+  );
+};
+
+export default Signin;
