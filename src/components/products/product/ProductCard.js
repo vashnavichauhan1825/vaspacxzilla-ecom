@@ -51,17 +51,17 @@ const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
                 </div>
 
                 <small className="discount-cont">
-                  <s class="bold-grey-text margin-right-5px">
+                  <s className="bold-grey-text margin-right-5px">
                     {products.discountPrice}
                   </s>
-                  <span class="r-color">{products.discount}</span>
+                  <span className="r-color">{products.discount}</span>
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
                 {cartProducts.some((item) => item.id === products.id) ?(
                   <button  onClick={() => {
                     removeFromCart(products);
-                  }} className="primay-btn label-btn">Remove from Cart</button>
+                  }} className="primay-btn label-btn remove-cart-btn">Remove from Cart</button>
                 ):
                ( <button
                  onClick={() => {
@@ -77,13 +77,13 @@ const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
                   onClick={() => {
                       removeFromWishlist(products);
                     }}
-                  className="fa fa-heart-o wishlist"
+                  className="fa fa-heart wishlist"
                   aria-hidden="true"
                 ></i>):( <i
                   onClick={() => {
                       addToWishlist(products);
                     }}
-                  className="fa fa-heart-o wishlist"
+                  className="fa fa-heart-o wishlist-red"
                   aria-hidden="true"
                 ></i>)}
                 {products.badge === true && (

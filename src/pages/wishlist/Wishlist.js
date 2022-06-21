@@ -22,7 +22,7 @@ export const Wishlist = () => {
             <small className="bold-white-txt">{products.price}</small>
             {cartProducts.some((item) => item.id === products.id) ?( <button  onClick={() => {
                     removeFromCart(products);
-                  }} className="primay-btn label-btn">Remove From Cart</button>
+                  }} className="primay-btn label-btn remove-cart-btn">Remove From Cart</button>
           ):( <button  onClick={() => {
                     addToCart(products);
                   }} className="primay-btn label-btn">MOVE TO CART</button>
@@ -33,7 +33,7 @@ export const Wishlist = () => {
         </div>
        
     ))} </div>:(<h1 className='not-found-data'>your wishlist is empty !</h1>)}
-    <Link to="/catalog"><button class="button-shopping"><i class="fa fa-arrow-left" aria-hidden="true"></i> Continue Shoppping</button></Link>
+    <Link to="/catalog"><button className="button-shopping"><i className="fa fa-arrow-left" aria-hidden="true"></i> Continue Shoppping</button></Link>
 
 </div>
 

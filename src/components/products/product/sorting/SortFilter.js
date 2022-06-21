@@ -17,7 +17,7 @@ const SortFilter = () => {
 
   return (
     <form>
-      <select class="bold-grey-text" onChange={sortChangeHandler}>
+      <select className="bold-grey-text" onChange={sortChangeHandler}>
         <option disabled selected>Sort By Price</option>
         <option value="high-to-low" selected={sort === "High-to-low"}>
           Price: High to Low

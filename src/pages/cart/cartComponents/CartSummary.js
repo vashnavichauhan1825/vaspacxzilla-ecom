@@ -11,40 +11,40 @@ const CartSummary = () => {
       );
     }, [cartProducts]);
   return (
-    <div class="cart-sum">
-    <div class="border-bottom">
+    <div className="cart-sum">
+    <div className="border-bottom">
         <h1>SUMMARY</h1>
     </div>
-    <div class="border-bottom">
-        <div class="cart-sum-flex">
+    <div className="border-bottom">
+        <div className="cart-sum-flex">
             <small>SubTotal</small>
             <small>₹ {amount}</small>
         </div>
-        <div class="cart-sum-flex">
+        <div className="cart-sum-flex">
             <small>amount Items</small>
             <small>{cartProducts.length}</small>
         </div>
-        <div class="cart-sum-flex">
+        <div className="cart-sum-flex">
             <small>shipping cost</small>
             <small>₹ 0.00</small>
         </div>
-        <div class="cart-sum-flex">
+        <div className="cart-sum-flex">
             <small>Discount <span className='r-color'>(20%)</span></small>
             <small className='r-color'>- ₹ {(amount*0.2).toFixed(2)}</small>
         </div>
     </div>
-    <div class="border-bottom">
-        <div class="cart-sum-flex">
+    <div className="border-bottom">
+        <div className="cart-sum-flex">
             <small>Apply Discount Code</small>
-            <small><i class="fa fa-arrow-right" aria-hidden="true"></i></small>
+            <small><i className="fa fa-arrow-right" aria-hidden="true"></i></small>
         </div>
     </div>
     <div>
-        <div class="cart-sum-flex">
+        <div className="cart-sum-flex">
             <p>amount</p>
             <p className='r-color'>₹ {amount-(0.2*amount)}</p>
         </div>
-        <button  class="primay-btn label-btn pointer">Checkout</button> 
+        <button  className="primay-btn label-btn pointer">Checkout</button> 
     </div>
 </div>
   )

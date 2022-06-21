@@ -5,10 +5,10 @@ import { popularItem } from '../../data'
 export const PopularCategory = () => {
   return (
       <Fragment>
-       <h2 class="heading-product">Popular Categories</h2>
+       <h2 className="heading-product">Popular Categories</h2>
     <Card> {
         popularItem.map((item)=>(
-         <div className="pc-first">
+         <div className="pc-first" key={item.id}>
          <div className="flex-center-product">
              <img src={item.img}/>
          </div>

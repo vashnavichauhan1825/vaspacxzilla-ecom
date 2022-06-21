@@ -13,14 +13,14 @@ const path = useLocation();
                 <div className="left-menu">
                    <button><i className="fa fa-bars" aria-hidden="true"></i><span id='hidden__cont'>Categories</span></button>
                   <div className="dropdown-menu">
-                    <a href="/">Books<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Astronomy<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Home Decor<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Specialty Lighting<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Glassware & Drinkware<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Toys and Games<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Men's Clothing<i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                   <a href="/">Women's Clothing<i className="fa fa-angle-right" aria-hidden="true"></i></a> 
+                    <Link to="/catalog">Books<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Astronomy<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Home Decor<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Specialty Lighting<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Glassware & Drinkware<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Toys and Games<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Men's Clothing<i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                   <Link to="/catalog">Women's Clothing<i className="fa fa-angle-right" aria-hidden="true"></i></Link> 
                    </div>
                 </div>
     
