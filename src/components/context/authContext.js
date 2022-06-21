@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, useState, useContext} from 'react';
+import { createContext, useState, useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from './cartContext';
 import { useFilterContext } from './filterContext';
@@ -12,6 +12,8 @@ const authContext = createContext({
     login:()=>{},
     logout:()=>{},
     signup:()=>{},
+    user:"",
+    email:""
 });
 
 const AuthProvider =({children})=>{
@@ -19,11 +21,11 @@ const AuthProvider =({children})=>{
     const {dispatch}=  useFilterContext();
     const {setCartProducts}= useCartContext();
     const {setWishlistItems} = useWishlistContext();
-    const userInLocalStorage = localStorage.getItem("user")
-    const tokenInLocalStorage = localStorage.getItem("token")
-    const [user,setUser] = useState(userInLocalStorage)
-    const [token,setToken] = useState(tokenInLocalStorage)
-
+    const userLocalStorage = localStorage.getItem("user")
+    const tokenLocalStorage =localStorage.getItem("token")
+    const [user,setUser] = useState(userLocalStorage)
+    const [token,setToken] = useState(tokenLocalStorage)
+    const [email , setEmail] = useState('');
     const isUserLoggedIn = !!token
    
    
@@ -51,21 +53,23 @@ const AuthProvider =({children})=>{
         console.log("logiiin",formInfo);
         try {
           
-            const responseData  = await axios.post('/api/auth/login', {
+            const responseData = await axios.post('/api/auth/login', {
             ...formInfo
             });
             console.log(responseData)
-          if(responseData.status === 200){
+           if(responseData.status ===200){
             localStorage.setItem("token", responseData.data.encodedToken);
             localStorage.setItem("user", responseData.data.foundUser.firstName);
             setToken(responseData.data.encodedToken);
-            console.log(isUserLoggedIn)
             setUser(responseData.data.foundUser.firstName)
+            console.log("email",responseData.data.foundUser.email)
+           setEmail(responseData.data.foundUser.email);
+            console.log(responseData)
             dispatch({ type: "SUCCESS_TOAST", payload: `${responseData.data.foundUser.firstName} logged in !` });
-          }
-            
+            console.log(email)
+            }
           } catch (error) {
-            dispatch({ type: "ERROR_TOAST", payload: error.response.data.errors });
+            dispatch({ type: "ERROR_TOAST", payload: error });
             console.log(error)
           }
   }
@@ -73,10 +77,14 @@ const AuthProvider =({children})=>{
         localStorage.clear();
         setToken(null);
         setUser("");
+        setEmail("")
         dispatch({ type: "ERROR_TOAST", payload: "Logged Out" });
         setCartProducts([]);
         setWishlistItems([]);
+        navigate('/')
     }
+
+    
 
     const contextValue={
         token:token,
@@ -85,6 +93,7 @@ const AuthProvider =({children})=>{
         signup:signUpHandler,
         logout:logoutHandler,
         user:user,
+        email:email
     }
 
    

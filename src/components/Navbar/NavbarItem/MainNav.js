@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MainNav = () => {
-  const {user} = useAuthCtx();
+  const {user,isLoggedIn} = useAuthCtx();
   return (
     <div className="search-nav">
       <span className="vaspacx">
@@ -28,10 +28,12 @@ const MainNav = () => {
         <small className="bold-grey-text pointer" id="hidden__cont">
           Help <i className="fa fa-angle-down" aria-hidden="true"></i>
         </small>
-        <div className="cart-nav-cont">
-          <Link to="/signin" elements={<Signin/>}>
+        <div className="cart-nav-cont">{isLoggedIn? ( <Link to="/profile">
             <i className="fa fa-shopping-basket pointer" aria-hidden="true"></i>
-          </Link>
+          </Link>):( <Link to="/signin" elements={<Signin/>}>
+            <i className="fa fa-shopping-basket pointer" aria-hidden="true"></i>
+          </Link>)
+         }
           <small id="hidden__cont">{user} Account</small>
         </div>
       </div>
