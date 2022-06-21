@@ -1,4 +1,4 @@
-import { useVaspacxTitle } from 'components/hooks/useVaspacxTitle'
+
 import { Toast } from 'components/Toast/Toast'
 import {FeatureProduct, ImgLayout,Newsletter,
   PopularCategory,Service,Reviews,Slider} from '../../components'
@@ -7,7 +7,7 @@ import{ WrapperNav} from '../../UI'
 import './Home.css'
 
 export const Home = () => {
-  useVaspacxTitle("Home");
+
   return (
    <>
    <Toast/>

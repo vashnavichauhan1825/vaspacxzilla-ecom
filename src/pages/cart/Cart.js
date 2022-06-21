@@ -5,10 +5,9 @@ import CartItems from "./cartComponents/CartItems";
 import CartSummary from "./cartComponents/CartSummary";
 import { useCartContext } from "components/context/cartContext";
 import { Toast } from "components/Toast/Toast";
-import { useVaspacxTitle } from "components/hooks/useVaspacxTitle";
 
 export const Cart = () => {
-  useVaspacxTitle("Cart")
+ 
   return (
     <WrapperNav>
       <Toast />
