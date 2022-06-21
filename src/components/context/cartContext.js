@@ -21,6 +21,7 @@ const CartProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setCartProducts(response.data.cart);
+        console.log(response)
         dispatch({ type: "SUCCESS_TOAST", payload: "Added to Cart" });
       }
       console.log(encodedToken)
@@ -47,31 +48,60 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const changeCartQty = async (quantity, id) => {
-    try {
-      const response = await axios.post(
-        `/api/user/cart/${id}`,
-        {
-          qty: quantity,
-        },
-        {
-          headers: {
-            authorization: encodedToken,
-          },
-        }
-      );
-      if (response.status === 200) {
-        setCartProducts(response.data.cart);
-        dispatch({ type: "SUCCESS_TOAST", payload: "Updated" });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const changeCartQty = async (operation,id) => {
+  //   if(operation === "increment"){
+  //     try {
+  //       const response = await axios.post(
+  //         `/api/user/cart/${id}`,
+  //        {action:{
+  //           type:"increment"
+  //        }},
+  //         {
+  //           headers: {
+  //             authorization: encodedToken,
+  //           },
+  //         }
+  //       );
+  //       if (response.status === 200) {
+  //         setCartProducts(response.data.cart);
+  //         console.log(response)
+  //         dispatch({type:"CHANGE_QTY",payload:response.data.cart})
+  //         dispatch({ type: "SUCCESS_TOAST", payload: "Updated" });
+  //       }
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+     
+  //   }
+  // else if(operation === "decrement"){
+  //   try {
+  //     const response = await axios.post(
+  //       `/api/user/cart/${id}`,
+  //      {action:{
+  //         type:"decrement"
+  //      }},
+  //       {
+  //         headers: {
+  //           authorization: encodedToken,
+  //         },
+  //       }
+  //     );
+  //     if (response.status === 200) {
+  //       setCartProducts(response.data.cart);
+  //       console.log(response)
+  //       dispatch({type:"CHANGE_QTY",payload:response.data.cart})
+  //       dispatch({ type: "SUCCESS_TOAST", payload: "Updated" });
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+  
+  // };
 
   return (
     <CartContext.Provider
-      value={{ cartProducts, addToCart, removeFromCart, changeCartQty }}
+      value={{ cartProducts, addToCart, removeFromCart, setCartProducts }}
     >
       {children}
     </CartContext.Provider>

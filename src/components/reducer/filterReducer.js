@@ -82,7 +82,10 @@ export const filterReducer = (state, action) => {
       };
 
       case "CHANGE_QTY":
-        return {...state,cart:action.payload}
+        return {
+          ...state,
+          cart: [ action.payload],
+        };
         
     // toast state handler
     case "TOAST_STATE_CLEAN":

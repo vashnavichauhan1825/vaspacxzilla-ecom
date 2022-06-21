@@ -134,13 +134,6 @@ export const updateCartItemHandler = function (schema, request) {
         }
       });
     }
-    const { qty } = JSON.parse(request.requestBody);
-    userCart.forEach((item) => {
-      if (item._id === productId) {
-        item.qty = qty;
-        item.updatedAt = formatDate();
-      }
-    });
     this.db.users.update({ _id: userId }, { cart: userCart });
     return new Response(200, {}, { cart: userCart });
   } catch (error) {
