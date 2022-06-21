@@ -8,6 +8,7 @@ export const Brand =()=>{
 
     const [brandData , setBrandData] = useState([]);
 const currentPath = useLocation();
+
     useEffect(()=>{
         (async function (){
             const {data} = await axios.get('./api/brands');
