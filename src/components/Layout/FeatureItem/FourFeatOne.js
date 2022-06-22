@@ -18,7 +18,8 @@ const FourFeatOne = () => {
                 <small className="bold-grey-text">{item.title}</small>
                 <small>{item.product}</small><br/>
                 <small className="bold-white-txt">{item.price}</small>
-            </div>  
+            </div> 
+            </div> 
             </Link>
              )
          }

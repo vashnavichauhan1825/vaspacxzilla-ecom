@@ -22,7 +22,7 @@ export const PopularCategory = () => {
                  <li className="bold-grey-text pointer"><small>{item.listTwo}</small></li>
                  <li className="bold-grey-text pointer"><small>{item.listThree}</small></li>
                  <li className="bold-grey-text pointer"><small>{item.listFour}</small></li>
-                 <li className='pointer'><small>Show All <i className="fa fa-angle-right" aria-hidden="true"></i></small></li>
+               <Link to="/catalog">  <li className='pointer'><small>Show All <i className="fa fa-angle-right" aria-hidden="true"></i></small></li></Link>
              </ul>
          
      </div>
@@ -32,33 +32,3 @@ export const PopularCategory = () => {
   )
 }
 
-
-            <ul>
-              <li>{item.title}</li>
-              <li className="bold-grey-text pointer">
-                <small>{item.listOne}</small>
-              </li>
-              <li className="bold-grey-text pointer">
-                <small>{item.listTwo}</small>
-              </li>
-              <li className="bold-grey-text pointer">
-                <small>{item.listThree}</small>
-              </li>
-              <li className="bold-grey-text pointer">
-                <small>{item.listFour}</small>
-              </li>
-              <Link to="/catalog">
-                <li className="pointer">
-                  <small>
-                    Show All{" "}
-                    <i className="fa fa-angle-right" aria-hidden="true"></i>
-                  </small>
-                </li>
-              </Link>
-            </ul>
-          </div>
-        ))}
-      </Card>
-    </Fragment>
-  );
-};

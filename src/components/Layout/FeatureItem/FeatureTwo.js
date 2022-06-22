@@ -19,6 +19,7 @@ const FeatureTwo = () => {
                 <small>{item.product}</small><br/>
                 <small className="bold-white-txt">{item.price}</small>
             </div> 
+            </div>
             </Link> 
              )
          }
