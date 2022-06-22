@@ -12,11 +12,11 @@ const InfoNav = () => {
         </small>
       </div>
       <div className="contact-nav-btn">
-        <a href="/">
+        <Link to="/">
           <button className="icon-button bold-grey-text pointer">
             <i className="fa fa-github" aria-hidden="true"></i>Github
           </button>
-        </a>
+        </Link>
        {isLoggedIn?( <a onClick={logout}>
           <button className="icon-button bold-grey-text pointer">
           <i className="fa fa-sign-out"></i> Logout

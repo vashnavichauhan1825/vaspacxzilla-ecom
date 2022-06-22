@@ -1,15 +1,19 @@
 import ShopNowWrapper from "UI/vaspacxlogo/ShopNowWrapper";
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import "./login.css";
 import { useAuthCtx } from "components/context/authContext";
-import {Link, useNavigate } from "react-router-dom";
-import Signin from "./Signin";
+import {Link } from "react-router-dom";
+import { useFilterContext } from "components/context/filterContext";
+import { Toast } from "components/Toast/Toast";
+import { useVaspacxTitle } from "components/DocumentTitle/useVaspacxTitle";
 
 const Signup = () => {
+useVaspacxTitle('Sign Up')
     // const inputPassword = useRef();
     // const inputEmailRef = useRef();
     // const inputName = useRef();
-    const navigate =useNavigate();
+ 
+    const {dispatch} = useFilterContext();
     const {signup} = useAuthCtx();
     const [formInfo , setFormInfo]= useState({
         firstName:"",
@@ -17,23 +21,32 @@ const Signup = () => {
         password:""
     })
 
-   const submitHandler=(e)=>{
+   const submitHandler=(e,formInfo)=>{
         e.preventDefault();
-      signup(formInfo);
-      navigate('/');
+        console.log(formInfo)
+        if(formInfo.email !== "" && formInfo.password !== ""){
+          signup(formInfo);
+        }else{
+          dispatch({
+            type: "ERROR_TOAST",
+            payload: "🤦‍♀️ fill all fields !",
+          });
+        }
+     
     }
 
-  
-
+   
 
   return (
+    <>
+    <Toast/>
     <ShopNowWrapper>
       <form onSubmit={submitHandler} className="container-login">
         <div className="cont-left">
           <h1>Sign Up</h1>
           <div>
             <small className="text-grey">
-              Already a member?<Link to="/signin" elements={<Signin/>}><u className="bold-white-txt"> Log In</u></Link>
+              Already a member?<Link to="/signin"><u className="bold-white-txt"> Log In</u></Link>
             </small>
           </div>
           <label>First Name</label>
@@ -46,11 +59,7 @@ const Signup = () => {
           <input className="input" type="password"  onChange={(e) =>
           setFormInfo({ ...formInfo, password: e.target.value })} name="password" placeholder="Password" />
           <div className="btn-container-login">
-            <button className="btn-create">Create an account</button>
-            <button  className="btn-sign">
-              <i className="fa fa-google-plus-square" aria-hidden="true"></i>Sign up
-              with Google
-            </button>
+            <button type="click" onClick={(e)=>submitHandler(e,formInfo)} className="btn-create">Create an account</button>
           </div>
           <small className="text-grey">
             @vaspacx-Privacy Policy and Terms of Service apply.
@@ -58,6 +67,7 @@ const Signup = () => {
         </div>
       </form>
     </ShopNowWrapper>
+    </>
   );
 };
 

@@ -1,4 +1,3 @@
-
 section{
     display:grid;
     grid-template-rows:50px auto;
@@ -84,7 +83,18 @@ main .product-display i{
     cursor: pointer;
 }
 
-main .product-display .wishlist:hover{
-    color:var(--font-primary);
+main .product-display .wishlist{
+    color:var(--lightGrey)
 }
 
+main .product-display .wishlist:hover{
+      color: rgb(255 77 77);
+}
+
+main .product-display .wishlist-red{
+    color: rgb(255 77 77);
+}
+
+.product-display .remove-cart-btn{
+    background-color:rgb(255 77 77);
+}

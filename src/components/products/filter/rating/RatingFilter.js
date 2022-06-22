@@ -9,7 +9,7 @@ const RatingFilter = () => {
     <div className="brand">
       <p className="bold-white-text">Customer Review</p>
       {rateNumbers.map((num) => (
-        <div>
+        <div key={num}>
           <input
             type="radio"
             onChange={(e) =>

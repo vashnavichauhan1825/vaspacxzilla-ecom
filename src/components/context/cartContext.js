@@ -21,6 +21,7 @@ const CartProvider = ({ children }) => {
       );
       if (response.status === 201) {
         setCartProducts(response.data.cart);
+        console.log(response)
         dispatch({ type: "SUCCESS_TOAST", payload: "Added to Cart" });
       }
       console.log(encodedToken)
@@ -47,31 +48,10 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const changeCartQty = async (quantity, id) => {
-    try {
-      const response = await axios.post(
-        `/api/user/cart/${id}`,
-        {
-          qty: quantity,
-        },
-        {
-          headers: {
-            authorization: encodedToken,
-          },
-        }
-      );
-      if (response.status === 200) {
-        setCartProducts(response.data.cart);
-        dispatch({ type: "SUCCESS_TOAST", payload: "Updated" });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   return (
     <CartContext.Provider
-      value={{ cartProducts,setCartProducts, addToCart, removeFromCart, changeCartQty }}
+      value={{ cartProducts, addToCart, removeFromCart, setCartProducts }}
     >
       {children}
     </CartContext.Provider>

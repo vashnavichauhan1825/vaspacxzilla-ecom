@@ -6,7 +6,7 @@ export const Service = () => {
   return (
     <Card>
       {serviceItems.map((item) => (
-        <div className="service-conatiner">
+        <div key={item.id} className="service-conatiner">
           <div>
             <i className={item.icon} aria-hidden="true"></i>
             <h3>{item.title}</h3>

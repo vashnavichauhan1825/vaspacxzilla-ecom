@@ -4,8 +4,10 @@ import CategoryNav from 'components/Navbar/NavbarItem/CategoryNav'
 import InfoNav from 'components/Navbar/NavbarItem/InfoNav'
 import './profile.css'
 import { Footer } from 'components'
+import { useVaspacxTitle } from 'components/DocumentTitle/useVaspacxTitle'
 
 const Profile = () => {
+  useVaspacxTitle('Profile')
     const {user,email} = useAuthCtx();
   return (
     <>
@@ -47,8 +49,8 @@ const Profile = () => {
       </div>
    </div>
    <Link to="/catalog">
-          <button class="button-shopping">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> Continue
+          <button className="button-shopping">
+            <i className="fa fa-arrow-left" aria-hidden="true"></i> Continue
             Shoppping
           </button>
         </Link>

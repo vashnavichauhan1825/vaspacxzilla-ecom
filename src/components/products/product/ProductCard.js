@@ -49,10 +49,10 @@ export const ProductCard = () => {
                 </div>
 
                 <small className="discount-cont">
-                  <s class="bold-grey-text margin-right-5px">
+                  <s className="bold-grey-text margin-right-5px">
                     {products.discountPrice}
                   </s>
-                  <span class="r-color">{products.discount}</span>
+                  <span className="r-color">{products.discount}</span>
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
@@ -61,7 +61,7 @@ export const ProductCard = () => {
                     onClick={() => {
                       removeFromCart(products);
                     }}
-                    className="primay-btn label-btn"
+                    className="primay-btn label-btn remove-cart-btn"
                   >
                     Remove from Cart
                   </button>
@@ -90,7 +90,7 @@ export const ProductCard = () => {
                     onClick={() => {
                       removeFromWishlist(products);
                     }}
-                    className="fa fa-heart-o wishlist"
+                    className="fa fa-heart wishlist-red"
                     aria-hidden="true"
                   ></i>
                 ) : (

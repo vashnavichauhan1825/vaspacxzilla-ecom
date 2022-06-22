@@ -1,4 +1,5 @@
 import React,{useRef, useReducer, useState,useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import shoeImg from '../../../img/shoes.jpg'
 
 const SpecialCountdown = () => {
@@ -41,6 +42,7 @@ const SpecialCountdown = () => {
     });
 
     return (
+        <Link to="/catalog">
     <div className="feature-second pointer"> 
      <img src={shoeImg}/>
      <p>Vaspacx Shoes</p>
@@ -62,6 +64,7 @@ const SpecialCountdown = () => {
     </div>
 
  </div>
+ </Link>
   )
 }
 

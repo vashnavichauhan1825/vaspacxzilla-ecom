@@ -1,13 +1,15 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ShopNowWrapper from "UI/vaspacxlogo/ShopNowWrapper";
 import { useAuthCtx } from "components/context/authContext";
-import axios from "axios";
-import { Navbar } from "components";
 import "./login.css";
 import { Toast } from "components/Toast/Toast";
+import { useFilterContext } from "components/context/filterContext";
+import { useVaspacxTitle } from "components/DocumentTitle/useVaspacxTitle";
 const Signin = () => {
+  useVaspacxTitle('Sign In')
   const { login } = useAuthCtx();
+  const {dispatch} = useFilterContext();
   const navigate = useNavigate();
   const [formInfo, setFormInfo] = useState({
     email: "",
@@ -15,8 +17,16 @@ const Signin = () => {
   });
   const loginSubmitHandler = (e) => {
     e.preventDefault();
-    login(formInfo);
-    navigate('/')
+    if(formInfo.email !== "" && formInfo.password !== ""){
+      login(formInfo);
+      navigate('/')
+    }else{
+      dispatch({
+        type: "ERROR_TOAST",
+        payload: " 🤦‍♀️ Fill All Fields !",
+      });
+    }
+    
   };
 
   const guestHandler = () => {
@@ -45,7 +55,7 @@ const Signin = () => {
             onChange={(data) =>
               setFormInfo({ ...formInfo, email: data.target.value })
             }
-            type="email"
+            type="email" 
             placeholder="E-mail"
           />
           <label>Password</label>
@@ -55,7 +65,7 @@ const Signin = () => {
             onChange={(data) =>
               setFormInfo({ ...formInfo, password: data.target.value })
             }
-            type="password"
+            type="password" 
             placeholder="Password"
           />
           <small>
@@ -71,8 +81,8 @@ const Signin = () => {
               type="submit"
               className="btn-sign"
             >
-              <i className="fa fa-google-plus-square" aria-hidden="true"></i>
-              Sign in with Google
+              <i className="fa fa-address-book" aria-hidden="true"></i>
+              Sign in as GUEST
             </button>
           </div>
           <small className="text-grey">

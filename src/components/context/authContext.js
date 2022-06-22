@@ -48,7 +48,8 @@ const AuthProvider = ({ children }) => {
     console.log("logiiin", formInfo);
     try {
       const responseData = await axios.post("/api/auth/login", {
-        ...formInfo,
+       email:formInfo.email,
+       password:formInfo.password
       });
 
       if (responseData.status === 200) {
