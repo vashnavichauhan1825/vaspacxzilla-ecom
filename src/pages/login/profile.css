@@ -1,0 +1,25 @@
+.profile-cont{
+    max-width:50%;
+    background-color: var(--secbg-color);
+    margin: auto;
+    padding: 1rem;
+    height: auto;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+.profile-layout{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--mainBrandColor);
+    border-bottom: 2px solid var(--font-primary);
+}
+
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    align-items: center;
+}

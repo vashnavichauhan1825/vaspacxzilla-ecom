@@ -1,4 +1,5 @@
 import React,{useRef, useReducer, useState,useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import shoeImg from '../../../img/shoes.jpg'
 
 const SpecialCountdown = () => {
@@ -10,7 +11,7 @@ const SpecialCountdown = () => {
     let interval = useRef();
 
     const startTimer = () => {
-        const countdownDate =new Date('May 30 2022 00:00:00').getTime();
+        const countdownDate =new Date('November 30 2022 00:00:00').getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -41,6 +42,7 @@ const SpecialCountdown = () => {
     });
 
     return (
+        <Link to="/catalog">
     <div className="feature-second pointer"> 
      <img src={shoeImg}/>
      <p>Vaspacx Shoes</p>
@@ -62,6 +64,7 @@ const SpecialCountdown = () => {
     </div>
 
  </div>
+ </Link>
   )
 }
 

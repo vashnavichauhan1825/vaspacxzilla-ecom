@@ -7,37 +7,35 @@ import { FilterHook } from "components/hooks/FilterHook";
 import "./products.css";
 import { useCartContext } from "components/context/cartContext";
 import { useWishlistContext } from "components/context/WishlistContext";
+import { useAuthCtx } from "components/context/authContext";
+import { Link } from "react-router-dom";
+import Signin from "pages/login/Signin";
 
 export const ProductCard = () => {
-  // const { products, dispatch } = useProductContext();
+  const { isLoggedIn } = useAuthCtx();
   const { sortedProducts } = FilterHook();
   const { dispatch } = useFilterContext();
- const {cartProducts,removeFromCart, addToCart}= useCartContext();
-const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
+  const { cartProducts, removeFromCart, addToCart } = useCartContext();
+  const { wishlistItems, addToWishlist, removeFromWishlist } =
+    useWishlistContext();
   useEffect(() => {
-    
     (async function () {
       try {
         const { data } = await axios.get("./api/products");
         dispatch({ type: "GET_PRODUCTS", payload: data.products });
-       
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    
     })();
   }, []);
 
   let productLength = sortedProducts.length;
   return (
     <section>
-   
-     
       <CatalogSort />
       {productLength ? (
         <main>
           {sortedProducts.map((products) => {
-          
             return (
               <div key={products.id} className="product-display">
                 <img
@@ -58,34 +56,66 @@ const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
-                {cartProducts.some((item) => item.id === products.id) ?(
-                  <button  onClick={() => {
-                    removeFromCart(products);
-                  }} className="primay-btn label-btn remove-cart-btn">Remove from Cart</button>
-                ):
-               ( <button
-                 onClick={() => {
-                        addToCart(products);
-                      }}
-                  className="primay-btn label-btn"
-                >
-                 
-                  Add Cart
-                </button>)
-                }
-                {wishlistItems.some((item)=> item.id === products.id)?( <i
-                  onClick={() => {
+
+                {cartProducts.some((item) => item.id === products.id) ? (
+                  <button
+                    onClick={() => {
+                      removeFromCart(products);
+                    }}
+                    className="primay-btn label-btn remove-cart-btn"
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <>
+                    {isLoggedIn ? (
+                      <button
+                        onClick={() => {
+                          addToCart(products);
+                        }}
+                        className="primay-btn label-btn"
+                      >
+                        Add Cart
+                      </button>
+                    ) : (
+                      <Link to="/signin" elements={<Signin />}>
+                        <button className="primay-btn label-btn">
+                          Add Cart
+                        </button>
+                      </Link>
+                    )}
+                  </>
+                )}
+                {wishlistItems.some((item) => item.id === products.id) ? (
+                  <i
+                    onClick={() => {
                       removeFromWishlist(products);
                     }}
-                  className="fa fa-heart wishlist"
-                  aria-hidden="true"
-                ></i>):( <i
-                  onClick={() => {
-                      addToWishlist(products);
-                    }}
-                  className="fa fa-heart-o wishlist-red"
-                  aria-hidden="true"
-                ></i>)}
+                    className="fa fa-heart wishlist-red"
+                    aria-hidden="true"
+                  ></i>
+                ) : (
+                  <>
+                    {isLoggedIn ? (
+                      <i
+                        onClick={() => {
+                          addToWishlist(products);
+                        }}
+                        className="fa fa-heart-o wishlist"
+                        aria-hidden="true"
+                      ></i>
+                    ) : (
+                      <Link to="/signin" elements={<Signin/>}>
+                      <i
+                        className="fa fa-heart-o wishlist"
+                        aria-hidden="true"
+                      ></i>
+                      </Link>
+                    )}
+                  </>
+                )}
+
+               
                 {products.badge === true && (
                   <div className="card-bookmark">
                     <i
@@ -100,11 +130,10 @@ const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
         </main>
       ) : (
         <div className="not-found-data">
-        <h1>No data found !</h1>
+          <h1>No data found !</h1>
           <img src="https://media.giphy.com/media/gyr5H37A484WqdFXJ7/giphy.gif" />
         </div>
-       
-      )} 
+      )}
     </section>
   );
 };

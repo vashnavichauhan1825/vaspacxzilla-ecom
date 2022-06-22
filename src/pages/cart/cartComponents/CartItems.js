@@ -71,7 +71,9 @@ const CartItems = () => {
             </ul>
           </div>
           <span>
-            {products.qty}{" "}
+
+            {products.qty}
+
             <i
               onClick={() => setCartQuantity(products._id, "Increment")}
               className="fa fa-caret-up up"

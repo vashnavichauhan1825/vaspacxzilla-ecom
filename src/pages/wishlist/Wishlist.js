@@ -3,11 +3,15 @@ import { useCartContext } from 'components/context/cartContext';
 import { useWishlistContext } from 'components/context/WishlistContext'
 import { WrapperNav } from 'UI'
 import './wishlist.css'
+import { Toast } from 'components/Toast/Toast';
+import { useVaspacxTitle } from 'components/DocumentTitle/useVaspacxTitle';
 export const Wishlist = () => {
-
+   useVaspacxTitle('Wishlist')
   const {wishlistItems,removeFromWishlist}= useWishlistContext();
   const {cartProducts, addToCart ,removeFromCart} = useCartContext();
   return (
+    <>
+    <Toast/>
   <WrapperNav>
       <div className="margin-left-11x">
     <small className="bold-white-text">Main/<small>wishlist</small></small>
@@ -38,5 +42,6 @@ export const Wishlist = () => {
 </div>
 
   </WrapperNav>
+  </>
   )
 }
