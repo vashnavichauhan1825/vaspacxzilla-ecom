@@ -84,6 +84,7 @@ main .product-display i{
 }
 
 main .product-display .wishlist{
+
     color:var(--lightGrey)
 }
 
@@ -94,6 +95,7 @@ main .product-display .wishlist:hover{
 main .product-display .wishlist-red{
     color: rgb(255 77 77);
 }
+
 
 .product-display .remove-cart-btn{
     background-color:rgb(255 77 77);

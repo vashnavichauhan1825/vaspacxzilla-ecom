@@ -56,6 +56,7 @@ export const ProductCard = () => {
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
+
                 {cartProducts.some((item) => item.id === products.id) ? (
                   <button
                     onClick={() => {
@@ -113,6 +114,8 @@ export const ProductCard = () => {
                     )}
                   </>
                 )}
+
+               
                 {products.badge === true && (
                   <div className="card-bookmark">
                     <i

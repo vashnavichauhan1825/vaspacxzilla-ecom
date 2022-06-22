@@ -105,6 +105,7 @@ export const Slider = () => {
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
               <Link to="/catalog"><Button>SHOP NOW</Button></Link>
+
             </InfoContainer>
           </Slide>
         ))}

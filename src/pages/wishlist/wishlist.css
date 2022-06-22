@@ -80,7 +80,7 @@
     .wishlist-item-container .product-display .wishlist:hover{
         color:var(--font-primary);
     }
-    
+
     .product-display .remove-cart-btn{
         background-color:rgb(255 77 77);
     }

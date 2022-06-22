@@ -82,7 +82,7 @@ export const filterReducer = (state, action) => {
       };
 
       case "CHANGE_QTY":
-        return {...state,cart:action.payload}
+        return {...state,cart:[action.payload]}
         
     // toast state handler
     case "TOAST_STATE_CLEAN":
@@ -97,7 +97,7 @@ export const filterReducer = (state, action) => {
 
 
     case "RESET":
-      return {
+      return {...state,
         sort: null,
         price: 10000,
         brands: {},
@@ -105,6 +105,7 @@ export const filterReducer = (state, action) => {
         categories: {},
         forToast: { text: "", trigger: false, selector: "" },
         products: state.products,
+        forToast: { text: "", trigger: false, selector: "" }
       };
     default:
       throw new Error(`oops error:${action.type}`);

@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import { makeServer } from "./server";
-import { ProductCart } from "components/context/ProductContext";
 import { FilterProductProvider } from "components/context/filterContext";
 import { CartProvider } from "components/context/cartContext";
 import { useSignUp } from "components/hooks/useSignUp";

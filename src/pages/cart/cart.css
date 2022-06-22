@@ -79,17 +79,21 @@
   }
   
   .cartitem-one span{
-      position: relative;
-      border: 1px solid var(--lightGrey);
-      padding: 5px 20px;
-      border-radius: 5px;
+    position: relative;
+    min-width: 66px;
+    border: 1px solid var(--lightGrey);
+    padding: 5px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .cartitem-one span .down{
-      top: 30%;
-      right: 8%;
-      position: absolute;
-      cursor: pointer;
+    top: 32%;
+    right: 8%;
+    position: absolute;
+    font-size: 1.4rem;
+    cursor: pointer;
   }
   
   .cartitem-one span .down:hover{
@@ -97,10 +101,11 @@
   }
   
   .cartitem-one span .up{
-      position: absolute;
-      cursor: pointer;
-      top: 2%;
-      right: 8%;
+    position: absolute;
+    cursor: pointer;
+    top: -5%;
+    font-size: 1.4rem;
+    right: 8%;
   }
   .cartitem-one span .up:hover{
       color:var(--lightGrey);
