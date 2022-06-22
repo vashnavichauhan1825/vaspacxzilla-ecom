@@ -11,6 +11,7 @@ export const filterReducer = (state, action) => {
     case "BADGE":
       return { ...state, badge: action.payload };
 
+
     case "CATEGORIES":
       return {
         ...state,
@@ -50,14 +51,60 @@ export const filterReducer = (state, action) => {
         loading: !state.loading,
       };
 
-    case "RESET":
+      
+    // add to cart
+    case "ADD_TO_CART":
       return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+
+    // success toast
+    case "SUCCESS_TOAST":
+      return {
+        ...state,
+        forToast: {
+          text: action.payload,
+          trigger: !state.forToast.trigger,
+          selector: "success",
+        },
+      };
+
+    // error toast
+    case "ERROR_TOAST":
+      return {
+        ...state,
+        forToast: {
+          text: action.payload,
+          trigger: !state.forToast.trigger,
+          selector: "error",
+        },
+      };
+
+      case "CHANGE_QTY":
+        return {...state,cart:[action.payload]}
+        
+    // toast state handler
+    case "TOAST_STATE_CLEAN":
+      return {
+        ...state,
+        forToast: {
+          text: "",
+          trigger: false,
+          selector: "",
+        },
+      };
+
+
+    case "RESET":
+      return {...state,
         sort: null,
         price: 10000,
         brands: {},
         rating: 0,
         categories: {},
         products: state.products,
+        forToast: { text: "", trigger: false, selector: "" }
       };
     default:
       throw new Error(`oops error:${action.type}`);

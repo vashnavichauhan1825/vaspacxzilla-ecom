@@ -7,7 +7,7 @@ const FourFeatOne = () => {
     <FourItem>
          {
              featureItem.map((item)=>
-                <div className="product-display pointer">
+                <div className="product-display pointer" key={item.id}>
                 <img src={item.img}/>
                 <small className="bold-grey-text">{item.title}</small>
                 <small>{item.product}</small><br/>

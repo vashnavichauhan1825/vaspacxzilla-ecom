@@ -5,18 +5,26 @@ import { useFilterContext } from "components/context/filterContext";
 import CatalogSort from "./CatalogSort";
 import { FilterHook } from "components/hooks/FilterHook";
 import "./products.css";
+import { useCartContext } from "components/context/cartContext";
+import { useWishlistContext } from "components/context/WishlistContext";
 
 export const ProductCard = () => {
   // const { products, dispatch } = useProductContext();
   const { sortedProducts } = FilterHook();
   const { dispatch } = useFilterContext();
-
+ const {cartProducts,removeFromCart, addToCart}= useCartContext();
+const {wishlistItems , addToWishlist,removeFromWishlist}= useWishlistContext();
   useEffect(() => {
     
     (async function () {
-      const { data } = await axios.get("./api/products");
-      dispatch({ type: "GET_PRODUCTS", payload: data.products });
-     
+      try {
+        const { data } = await axios.get("./api/products");
+        dispatch({ type: "GET_PRODUCTS", payload: data.products });
+       
+      } catch (error) {
+        console.log(error)
+      }
+    
     })();
   }, []);
 
@@ -29,7 +37,7 @@ export const ProductCard = () => {
       {productLength ? (
         <main>
           {sortedProducts.map((products) => {
-            console.log(products.title);
+          
             return (
               <div key={products.id} className="product-display">
                 <img
@@ -43,31 +51,41 @@ export const ProductCard = () => {
                 </div>
 
                 <small className="discount-cont">
-                  <s class="bold-grey-text margin-right-5px">
+                  <s className="bold-grey-text margin-right-5px">
                     {products.discountPrice}
                   </s>
-                  <span class="r-color">{products.discount}</span>
+                  <span className="r-color">{products.discount}</span>
                 </small>
 
                 <span className="bold-white-txt">₹ {products.price}</span>
-
-                <button
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: products })
-                  }
+                {cartProducts.some((item) => item.id === products.id) ?(
+                  <button  onClick={() => {
+                    removeFromCart(products);
+                  }} className="primay-btn label-btn remove-cart-btn">Remove from Cart</button>
+                ):
+               ( <button
+                 onClick={() => {
+                        addToCart(products);
+                      }}
                   className="primay-btn label-btn"
                 >
                  
                   Add Cart
-                </button>
-
-                <i
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_WISHLIST", payload: products })
-                  }
-                  className="fa fa-heart-o wishlist"
+                </button>)
+                }
+                {wishlistItems.some((item)=> item.id === products.id)?( <i
+                  onClick={() => {
+                      removeFromWishlist(products);
+                    }}
+                  className="fa fa-heart wishlist"
                   aria-hidden="true"
-                ></i>
+                ></i>):( <i
+                  onClick={() => {
+                      addToWishlist(products);
+                    }}
+                  className="fa fa-heart-o wishlist-red"
+                  aria-hidden="true"
+                ></i>)}
                 {products.badge === true && (
                   <div className="card-bookmark">
                     <i

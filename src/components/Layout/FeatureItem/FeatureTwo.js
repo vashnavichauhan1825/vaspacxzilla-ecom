@@ -7,7 +7,7 @@ const FeatureTwo = () => {
    <FourItem>
         {
              SecfeatItem.map((item)=>
-                <div className="product-display pointer">
+                <div className="product-display pointer" key={item.id}>
                 <img alt="image" src={item.img}/>
                 <small className="bold-grey-text">{item.title}</small>
                 <small>{item.product}</small><br/>

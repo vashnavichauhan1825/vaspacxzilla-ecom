@@ -1,14 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MainNav = () => {
   return (
     <div className="search-nav">
-      <span className="vaspacx">
+    <Link to="/">
+    <span className="vaspacx">
         <span className="clr-white">vas</span>
         <span className="clr-primary">pac</span>
         <i className="fa fa-xing clr-primary" aria-hidden="true"></i>
         <span className="clr-primary">zilla</span>
       </span>
+    </Link>
+      
       <div className="search-cont">
         <form id="hidden__cont">
           <select className="bold-grey-text">
