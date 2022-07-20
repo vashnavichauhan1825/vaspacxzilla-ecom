@@ -175,20 +175,20 @@ export const review=[
     name:"Vashnavi",
     icon:"5star",
     message:"Now,if you are interested in space this is the correct place to explore",
-   id:uuid()
+    id:uuid()
   },
   {
     date:"06 Dec 2021",
     name:"Adrian Malana",
     icon:"4star",
     message:"Now,if you are interested in space this is the correct place to explore",
-   id:uuid()
+    id:uuid()
   },
   {
     date:"06 Dec 2021",
     name:"Alex joy",
     icon:"3star",
     message:"Now,if you are interested in space this is the correct place to explore",
-   id:uuid()
+    id:uuid()
   }
 ];

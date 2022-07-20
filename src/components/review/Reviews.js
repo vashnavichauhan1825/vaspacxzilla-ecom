@@ -19,9 +19,9 @@ export const Reviews = () => {
                   <p>{item.name}</p>
                   
                  
-                  {item.id === 20 && <Five/>}
-                  {item.id === 21 && <Four/>}
-                  {item.id === 22 && <Three/>} 
+                  {item.icon === "5star" && <Five/>}
+                  {item.icon === "4star" && <Four/>}
+                  {item.icon === "3star" && <Three/>} 
 
                   
                    <small className="bold-grey-text">{item.message}</small>
