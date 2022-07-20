@@ -27,7 +27,7 @@ So what are you waiting for Order Now.
 From **Navbar**
 
 - navigate to the WishList/Cart page
-- navigate to the Home page back, click on the StormPoint logo
+- navigate to the Home page back, click on the vaspacxzilla logo
 - Log In/Log Out
 
   - Sign Up by following the link provided on the Log In page
@@ -42,7 +42,7 @@ From **Home**
 
 From **Products** Page
 
-- filter the products based on your preference. StormPoint gives filter options for
+- filter the products based on your preference. vaspacxzilla gives filter options for
 
   - filter by Category
   - Sort by Price
