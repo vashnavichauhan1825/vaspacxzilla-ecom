@@ -1,0 +1,42 @@
+aside{
+    width:70%;
+    padding:1rem;
+}
+
+#icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration:none;
+}
+.brand{
+    border-bottom: 1px solid var(--lightGrey);
+    padding: 21px 0px;
+    cursor: pointer;
+}
+.brand label{
+font-size: 0.8rem;
+}
+.slider{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.7rem;
+}
+ 
+.brand .clear-btn{
+    background:transparent;
+    border:none;
+}
+.price-range input{
+    width:100%;
+}
+.price-range{
+    border-bottom: 1px solid var(--lightGrey);
+    padding: 5px 0px;
+}
+
+.price-range div{
+    margin-bottom: 14px;
+}
